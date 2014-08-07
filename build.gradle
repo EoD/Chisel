@@ -21,12 +21,12 @@ buildscript {
 
 apply plugin: 'forge'
 
-version = "1.5.4g"
+version = "1.5.4h"
 group = "info.jbcs.minecraft.chisel" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "Chisel"
 
 minecraft {
-    version = "1.7.2-10.12.2.1126"
+    version = "1.7.2-10.12.2.1147"
     assetDir = "eclipse/assets"
 }
 
