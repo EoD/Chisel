@@ -23,4 +23,10 @@ public class BlockLavastone extends BlockMarbleTexturedOre
             GeneralChiselClient.spawnLavastoneFX(world, this, x, y, z);
     }
 
+    @Override
+    public boolean renderAsNormalBlock()
+    {
+	return true;
+    }
+
 }
