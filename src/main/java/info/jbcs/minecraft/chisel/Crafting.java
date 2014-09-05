@@ -56,6 +56,7 @@ public class Crafting
         GameRegistry.addRecipe(new ItemStack(Chisel.itemBallOMoss, 1), new Object[]{"XYX", "YXY", "XYX", 'X', Blocks.vine, 'Y', Items.stick});
         GameRegistry.addRecipe(new ItemStack(Chisel.itemCloudInABottle, 1), new Object[]{"X X", "XYX", " X ", 'X', Blocks.glass, 'Y', Items.quartz});
 
+        GameRegistry.addRecipe(new ItemStack(ChiselBlocks.blockLaboratory, 8, 0), new Object[]{"***", "*X*", "***", '*', new ItemStack(Blocks.stone, 1), 'X', new ItemStack(Items.quartz, 1)});
 
     }
 }
