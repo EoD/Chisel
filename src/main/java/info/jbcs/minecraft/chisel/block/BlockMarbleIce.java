@@ -6,16 +6,12 @@ import info.jbcs.minecraft.chisel.carving.CarvableVariation;
 import info.jbcs.minecraft.chisel.Chisel;
 
 import java.util.List;
-import java.util.Random;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockIce;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
 import net.minecraft.stats.StatList;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
@@ -63,7 +59,7 @@ public class BlockMarbleIce extends BlockIce implements ICarvable
         par2EntityPlayer.addStat(StatList.mineBlockStatArray[Block.getIdFromBlock(this)], 1);
         par2EntityPlayer.addExhaustion(0.025F);
 
-/*
+        /*
         if(this.canSilkHarvest(par1World, par2EntityPlayer, par3, par4, par5, par6) && EnchantmentHelper.getSilkTouchModifier(par2EntityPlayer))
         {
             ItemStack itemstack = this.createStackedBlock(par6);
@@ -73,7 +69,7 @@ public class BlockMarbleIce extends BlockIce implements ICarvable
                 this.dropBlockAsItem(par1World, par3, par4, par5, itemstack);
             }
         }
-        */
+         */
     }
 
     @Override

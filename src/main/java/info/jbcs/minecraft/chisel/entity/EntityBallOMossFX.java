@@ -105,7 +105,7 @@ public class EntityBallOMossFX extends EntityFX
         motionZ = (General.rand.nextDouble() - 0.5) * 0.7;
         particleGravity = 2.0f;
 
-//		setParticleIcon(block.particles[General.rand.nextInt(block.particles.length)]);
+        //		setParticleIcon(block.particles[General.rand.nextInt(block.particles.length)]);
 
         icon = Chisel.itemBallOMoss.getIconFromDamage(0);
         float width = 4.0f + General.rand.nextFloat() * 8.0f;

@@ -227,8 +227,6 @@ public class BlockSnakestone extends Block
     {
         int[] con = getConnections(world, x, y, z);
         int blockMeta = world.getBlockMetadata(x, y, z);
-        int kind = blockMeta & 0xc;
-
         if(con[1] == -1) return false;
         if(con[2] != -1) return false;
 
@@ -310,9 +308,6 @@ public class BlockSnakestone extends Block
     @Override
     public IIcon getIcon(int side, int meta)
     {
-        int type = meta & 0xc;
-        int orient = meta & 0x3;
-
         switch(meta | (side << 4))
         {
 

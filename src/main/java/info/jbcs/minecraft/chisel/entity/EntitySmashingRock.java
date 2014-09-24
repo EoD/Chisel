@@ -1,7 +1,5 @@
 package info.jbcs.minecraft.chisel.entity;
 
-import info.jbcs.minecraft.chisel.ChiselBlocks;
-import info.jbcs.minecraft.chisel.client.GeneralChiselClient;
 import info.jbcs.minecraft.utilities.General;
 import net.minecraft.block.Block;
 import net.minecraft.entity.EntityLivingBase;

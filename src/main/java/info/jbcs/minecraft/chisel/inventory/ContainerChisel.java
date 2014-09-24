@@ -63,8 +63,8 @@ public class ContainerChisel extends Container
         {
             addSlotToContainer(l == currentIndex ?
                     new SlotChiselPlayer(this, inventoryplayer, l, 8 + l * 18, 160 - 18) :
-                    new Slot(inventoryplayer, l, 8 + l * 18, 160 - 18)
-            );
+                        new Slot(inventoryplayer, l, 8 + l * 18, 160 - 18)
+                    );
         }
 
         chisel = inventoryplayer.getCurrentItem();
@@ -75,7 +75,7 @@ public class ContainerChisel extends Container
         }
 
         Item item = General.getItem(chisel);
-        carving = item instanceof ItemChisel ? ((ItemChisel) item).carving : Carving.chisel;
+        carving = item instanceof ItemChisel ? ItemChisel.carving : Carving.chisel;
 
         inventory.updateItems();
     }

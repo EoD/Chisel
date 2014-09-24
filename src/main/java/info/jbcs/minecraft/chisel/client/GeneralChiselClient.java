@@ -65,9 +65,9 @@ public class GeneralChiselClient
         if(world.getBlock(x, y, z).isOpaqueCube()) return;
 
         EntityLavaFX res = new EntityLavaFX(world, x1, y1, z1);
-//		res.motionX=x1-x-0.5;
-//		res.motionY=y1-y-0.5;
-//		res.motionZ=z1-z-0.5;
+        //		res.motionX=x1-x-0.5;
+        //		res.motionY=y1-y-0.5;
+        //		res.motionZ=z1-z-0.5;
         double multiplier = 0.45;
         res.motionX = -multiplier * (x1 - x - 0.5);
         res.motionY = multiplier * (y1 - y - 0.5);
@@ -174,7 +174,7 @@ public class GeneralChiselClient
         }
 
         EntityDiggingFX res = new EntityDiggingFX(world, d0, d1, d2, 0.0D, 0.0D, 0.0D, block, world.getBlockMetadata(x, y, z), side);
-//		res.func_70596_a(x, y, z);
+        //		res.func_70596_a(x, y, z);
         res.motionX = d0 - (x + 0.5);
         res.motionY = d1 - (y + 0.5);
         res.motionZ = d2 - (z + 0.5);

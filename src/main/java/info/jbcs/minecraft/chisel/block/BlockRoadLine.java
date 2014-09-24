@@ -21,7 +21,7 @@ public class BlockRoadLine extends Block
         super(Material.circuits);
 
         this.setBlockBounds(0.0f, 0.0f, 0.0f, 1.0f, 0.00390625f, 1.0f);
-//        this.setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 0.0625F, 1.0F);
+        //        this.setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 0.0625F, 1.0F);
 
         setCreativeTab(Chisel.tabChisel);
     }
@@ -53,7 +53,7 @@ public class BlockRoadLine extends Block
     @Override
     public boolean canPlaceBlockAt(World par1World, int par2, int par3, int par4)
     {
-        return par1World.doesBlockHaveSolidTopSurface(par1World, par2, par3 - 1, par4) || par1World.getBlock(par2, par3 - 1, par4).equals(Blocks.glowstone);
+        return World.doesBlockHaveSolidTopSurface(par1World, par2, par3 - 1, par4) || par1World.getBlock(par2, par3 - 1, par4).equals(Blocks.glowstone);
     }
 
     @Override

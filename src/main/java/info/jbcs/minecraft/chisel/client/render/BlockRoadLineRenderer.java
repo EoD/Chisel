@@ -40,7 +40,7 @@ public class BlockRoadLineRenderer implements ISimpleBlockRenderingHandler
     @Override
     public boolean renderWorldBlock(IBlockAccess world, int x, int y, int z, Block b, int modelId, RenderBlocks renderer)
     {
-        int meta = world.getBlockMetadata(x, y, z);
+        world.getBlockMetadata(x, y, z);
         BlockRoadLine block = (BlockRoadLine) b;
         Tessellator tessellator = Tessellator.instance;
 

@@ -60,8 +60,8 @@ public class SlotChiselSelection extends Slot
         String sound = container.carving.getVariationSound(itemstack.getItem(), itemstack.getItemDamage());
         player.worldObj.playSoundAtEntity(player, sound, 0.3f + 0.7f * General.rand.nextFloat(), 0.6f + 0.4f * General.rand.nextFloat());
 
-		
-/*		ItemStack stack=player.inventory.getItemStack();
+
+        /*		ItemStack stack=player.inventory.getItemStack();
 
 		putStack(new ItemStack(itemstack.itemID, itemstack.stackSize, itemstack.getItemDamage()));
 
@@ -78,7 +78,7 @@ public class SlotChiselSelection extends Slot
 
 		String sound=Carving.chisel.getVariationSound(itemstack.itemID, itemstack.getItemDamage());
 		player.worldObj.playSoundAtEntity(player, sound, 0.3f + 0.7f * General.rand.nextFloat(), 0.6f + 0.4f * General.rand.nextFloat());
-*/
+         */
     }
 
     ContainerChisel container;

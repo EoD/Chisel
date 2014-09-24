@@ -40,8 +40,6 @@ public class BlockSpikes extends Block
         if(FMLCommonHandler.instance().getEffectiveSide() == Side.CLIENT)
             return;
 
-        double dy = entity.posY - entity.prevPosY;
-
         GeneralChiselClient.speedupPlayer(world, entity, Configurations.concreteVelocity);
     }
 

@@ -1,6 +1,5 @@
 package info.jbcs.minecraft.chisel.entity;
 
-import info.jbcs.minecraft.chisel.Chisel;
 import info.jbcs.minecraft.chisel.ChiselBlocks;
 
 import java.util.Random;

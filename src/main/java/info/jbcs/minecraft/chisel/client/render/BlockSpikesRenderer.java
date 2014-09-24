@@ -66,22 +66,19 @@ public class BlockSpikesRenderer implements ISimpleBlockRenderingHandler
     @Override
     public boolean renderWorldBlock(IBlockAccess world, int x, int y, int z, Block block, int modelId, RenderBlocks renderer)
     {
-        int meta = world.getBlockMetadata(x, y, z);
+        world.getBlockMetadata(x, y, z);
 
         renderer.renderStandardBlock(block, x, y, z);
 
         Tessellator tessellator = Tessellator.instance;
         IIcon icon = ChiselBlocks.blockSpiketrap.iconSpike;
-//		Icon icon=Chisel.blockSpiketrap.iconBase;
+        //		Icon icon=Chisel.blockSpiketrap.iconBase;
 
         double h = 0.85;
         double d = 1.5 / 16;
         double r = d / 2;
 
 
-        double tx = x + 0.25;
-        double ty = y + h;
-        double tz = z + 0.25;
         double skew = 0.5;
 
         //       tessellator.setBrightness(block.getMixedBrightnessForBlock(world, x, y, z));
@@ -92,8 +89,8 @@ public class BlockSpikesRenderer implements ISimpleBlockRenderingHandler
         {
             for(int yy = 0; yy < 4; yy++)
             {
-//				float sx=1.0f/16+rand.nextFloat()*13.0f/16;
-//				float sz=1.0f/16+rand.nextFloat()*13.0f/16;
+                //				float sx=1.0f/16+rand.nextFloat()*13.0f/16;
+                //				float sz=1.0f/16+rand.nextFloat()*13.0f/16;
                 float sx = (2.0f + (12.0f - (float) d) * xx / 3) / 16;
                 float sz = (2.0f + (12.0f - (float) d) * yy / 3) / 16;
 

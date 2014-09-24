@@ -1,6 +1,5 @@
 package info.jbcs.minecraft.utilities;
 
-import java.util.HashMap;
 import java.util.Random;
 
 import net.minecraft.block.Block;

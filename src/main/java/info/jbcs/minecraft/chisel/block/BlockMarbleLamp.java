@@ -69,7 +69,7 @@ public class BlockMarbleLamp extends BlockCarvable
         checkPower(world, x, y, z);
     }
 
-/*
+    /*
     @Override
 	public void updateTick(World world, int x, int y, int z, Random rand){
         if (world.isRemote) return;

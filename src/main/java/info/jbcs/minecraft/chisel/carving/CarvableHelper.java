@@ -300,7 +300,6 @@ public class CarvableHelper
 
         if(block instanceof BlockMarbleSlab)
         {
-            BlockMarbleSlab slab = (BlockMarbleSlab) block;
         }
 
         for(CarvableVariation variation : variations)
