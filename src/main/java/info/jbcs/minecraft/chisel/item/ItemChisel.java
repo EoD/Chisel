@@ -147,11 +147,4 @@ public class ItemChisel extends ItemTool
 
         return itemstack;
     }
-
-    @Override
-    public boolean onBlockStartBreak(ItemStack itemstack, int X, int Y, int Z, EntityPlayer player)
-    {
-        return true;
-    }
-
 }
