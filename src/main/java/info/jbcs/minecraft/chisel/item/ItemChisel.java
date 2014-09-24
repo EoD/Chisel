@@ -9,6 +9,7 @@ import info.jbcs.minecraft.chisel.carving.Carving;
 import info.jbcs.minecraft.chisel.carving.CarvingVariation;
 import info.jbcs.minecraft.chisel.client.GeneralChiselClient;
 import net.minecraft.block.Block;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
@@ -28,17 +29,19 @@ public class ItemChisel extends ItemTool
     public static Carving carving = Carving.chisel;
     private static final HashSet<String> toolSet = new HashSet<String>();
 
-    public ItemChisel(Carving c)
+    public ItemChisel()
     {
         super(1, ToolMaterial.IRON, CarvableHelper.getChiselBlockSet());
 
         setMaxStackSize(1);
-        setMaxDamage(500);
+        setMaxDamage(-1);
         efficiencyOnProperMaterial = 100f;
+
         setUnlocalizedName("chisel");
+        setTextureName("chisel:chisel");
 
         toolSet.add("chisel");
-        //this.carving = c;
+        setCreativeTab(CreativeTabs.tabTools);
     }
 
     @Override
