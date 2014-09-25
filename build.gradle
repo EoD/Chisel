@@ -17,7 +17,7 @@ buildscript {
 }
 
 apply plugin: 'forge'
-modVersion = "${versionMajor}.${versionMinor}.${versionRev}"
+ext.modVersion = "${versionMajor}.${versionMinor}.${versionRev}"
 version = "${mcVersion}-${modVersion}"
 group = "info.jbcs.minecraft.chisel" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "Chisel"
