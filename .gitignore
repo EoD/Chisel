@@ -23,3 +23,6 @@ run
 #mac
 .DS_Store
 *.command
+
+#linux
+*.swp
