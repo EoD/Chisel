@@ -90,11 +90,9 @@ processResources
         }
 
 // copy runtime+compile dependencies into the mods folder
-task copyChicken(type: Copy, dependsOn: "extractUserDev") {
+task copyChicken(type: Copy, dependsOn: ['extractUserDev', 'cleanMods']) {
     from configurations.runtime
-
     include "**/CodeChickenCore-${mcVersion}-*.jar", "**/NotEnoughItems-${mcVersion}-*.jar"
-
     into file(minecraft.runDir + "/mods/${mcVersion}")
 
     mustRunAfter "deobfBinJar"
@@ -102,6 +100,12 @@ task copyChicken(type: Copy, dependsOn: "extractUserDev") {
 }
 tasks.setupDevWorkspace.dependsOn copyChicken
 tasks.setupDecompWorkspace.dependsOn copyChicken
+
+
+task cleanMods(type: Delete) {
+    delete fileTree(dir: minecraft.runDir + "/mods/${mcVersion}", include: "*.jar")
+}
+
 
 // Create deobf dev jars
 task deobfJar(type: Jar) {
