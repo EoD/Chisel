@@ -28,7 +28,7 @@ minecraft {
     } else if (mcVersion == '1.7.10') {
       version = "1.7.10-10.13.0.1207"
     } else {
-      throw new InvalidUserDataException("Unknown mcVersion ${mcVersion}")
+      throw new InvalidUserDataException("Unknown mcVersion ${mcVersion} for forge")
     }
 
     runDir = "run"
@@ -49,7 +49,24 @@ repositories {
 }
 
 dependencies {
-    compile 'mcp.mobius.waila:Waila:1.5.3_1.7.10:dev'
+    if (mcVersion == '1.7.2') {
+        runtime 'codechicken:CodeChickenLib:1.7.2-1.1.1.97:dev'
+        runtime 'codechicken:NotEnoughItems:1.7.2-1.0.2.34:dev'
+        runtime 'codechicken:CodeChickenCore:1.7.2-1.0.2.12:dev'
+        compile('mcp.mobius.waila:Waila:1.5.3_1.7.10:dev') {
+            exclude group: 'codechicken'
+        }
+    }
+    else if (mcVersion == '1.7.10') {
+        compile('mcp.mobius.waila:Waila:1.5.4a_1.7.10:dev') {
+          compile 'codechicken:CodeChickenLib:1.7.10-1.1.1.104:dev'
+          compile 'codechicken:NotEnoughItems:1.7.10-1.0.3.56:dev'
+          compile 'codechicken:CodeChickenCore:1.7.10-1.0.3.26:dev'
+        }
+    }
+    else {
+        throw new InvalidUserDataException("Unknown mcVersion ${mcVersion} in dependencies")
+    }
 }
 
 processResources
@@ -72,13 +89,13 @@ processResources
             }
         }
 
-// some crazy stuff to make sure the chicken stuff is in the mods folder...
-// because it wont work otherwise...  because FML doesnt laod coremods from the classpath
+// copy runtime+compile dependencies into the mods folder
 task copyChicken(type: Copy, dependsOn: "extractUserDev") {
-    from { configurations.compile }
-    include "**/*Chicken*.jar", "**/*NotEnoughItems*.jar"
-    exclude "**/CodeChickenLib*" // because CCC downloads it anyways.. -_-
-    into file(minecraft.runDir + "/mods")
+    from configurations.runtime
+
+    include "**/CodeChickenCore-${mcVersion}-*.jar", "**/NotEnoughItems-${mcVersion}-*.jar"
+
+    into file(minecraft.runDir + "/mods/${mcVersion}")
 
     mustRunAfter "deobfBinJar"
     mustRunAfter "repackMinecraft"
