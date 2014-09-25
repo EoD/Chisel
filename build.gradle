@@ -17,16 +17,24 @@ buildscript {
 }
 
 apply plugin: 'forge'
-version = "1.5.8"                    // http://docs.codehaus.org/display/MAVEN/Versioning
+modVersion = "${versionMajor}.${versionMinor}.${versionRev}"
+version = "${mcVersion}-${modVersion}"
 group = "info.jbcs.minecraft.chisel" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "Chisel"
 
 minecraft {
-    version = "1.7.10-10.13.0.1207"
+    if (mcVersion == '1.7.2') {
+      version = "1.7.2-10.12.2.1147"
+    } else if (mcVersion == '1.7.10') {
+      version = "1.7.10-10.13.0.1207"
+    } else {
+      throw new InvalidUserDataException("Unknown mcVersion ${mcVersion}")
+    }
+
     runDir = "run"
 
     replaceIn "Chisel.java"
-    replace "@MOD_VERSION@", project.version
+    replace "@MOD_VERSION@", project.modVersion
 }
 
 repositories {
@@ -47,7 +55,7 @@ dependencies {
 processResources
         {
             // this will ensure that this task is redone when the versions change.
-            inputs.property "version", project.version
+            inputs.property "version", project.modVersion
             inputs.property "mcversion", project.minecraft.version
 
             // replace stuff in mcmod.info, nothing else
@@ -55,7 +63,7 @@ processResources
                 include 'mcmod.info'
 
                 // replace version and mcversion
-                expand 'version': project.version, 'mcversion': project.minecraft.version
+                expand 'version': project.modVersion, 'mcversion': project.minecraft.version
             }
 
             // copy everything else, thats not the mcmod.info
@@ -81,7 +89,7 @@ tasks.setupDecompWorkspace.dependsOn copyChicken
 // Create deobf dev jars
 task deobfJar(type: Jar) {
     from sourceSets.main.output
-    classifier = 'deobf'
+    classifier = 'dev'
 }
 
 // Create source attachment for dev jar
