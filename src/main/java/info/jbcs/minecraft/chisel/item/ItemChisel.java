@@ -9,6 +9,7 @@ import info.jbcs.minecraft.chisel.carving.Carving;
 import info.jbcs.minecraft.chisel.carving.CarvingVariation;
 import info.jbcs.minecraft.chisel.client.GeneralChiselClient;
 import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
@@ -39,6 +40,30 @@ public class ItemChisel extends ItemTool
         setTextureName("chisel:chisel");
 
         setCreativeTab(CreativeTabs.tabTools);
+    }
+
+    @Override
+    public boolean canHarvestBlock(Block block, ItemStack itemStack)
+    {
+        final int metadata = itemStack.getItemDamage();
+
+        // we don't want anyone to misuse the chisel as a replacement for a diamond pick
+        if (carving.isVariationOfSameClass(Blocks.obsidian, 0, block, metadata) && this.toolMaterial.getHarvestLevel() < 3)
+            return false;
+        else if (carving.isBlockCarvable(block, metadata))
+            return true;
+        else
+            return super.canHarvestBlock(block, itemStack);
+    }
+
+    @Override
+    public float getDigSpeed(ItemStack itemstack, Block block, int metadata)
+    {
+        // don't break glass with efficiency just because its carvable
+        if (!carving.isBlockCarvable(block, metadata) || block.getMaterial() == Material.glass)
+            return super.getDigSpeed(itemstack, block, metadata);
+        else
+            return this.efficiencyOnProperMaterial;
     }
 
     @Override

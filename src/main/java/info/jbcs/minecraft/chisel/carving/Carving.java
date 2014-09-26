@@ -42,6 +42,22 @@ public class Carving
 
     }
 
+    /**
+     * Check if the block is carvable with the respective carving tool
+     *
+     * @param block     Block to be tested
+     * @param metadata  metadata of the block
+     * @return          true if block is carvable, false if it is not
+     */
+    public boolean isBlockCarvable(Block block, int metadata)
+    {
+        final CarvingVariation[] variations = chisel.getVariations(block, metadata);
+        if (variations == null || variations.length < 2)
+            return false;
+
+        return true;
+    }
+
     public CarvingVariation[] getVariations(Block block, int metadata)
     {
         CarvingGroup group = getGroup(block, metadata);
