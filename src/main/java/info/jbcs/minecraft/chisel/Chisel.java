@@ -16,7 +16,6 @@ import cpw.mods.fml.common.registry.EntityRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.GameRegistry.Type;
 import info.jbcs.minecraft.chisel.block.BlockCarvable;
-import info.jbcs.minecraft.chisel.carving.Carving;
 import info.jbcs.minecraft.chisel.client.gui.GuiChisel;
 import info.jbcs.minecraft.chisel.entity.EntityBallOMoss;
 import info.jbcs.minecraft.chisel.entity.EntityCloudInABottle;
@@ -142,7 +141,7 @@ public class Chisel
             }
         };
 
-        chisel = (ItemChisel) new ItemChisel(Carving.chisel).setTextureName("chisel:chisel").setCreativeTab(CreativeTabs.tabTools);
+        chisel = new ItemChisel();
         GameRegistry.registerItem(chisel, "chisel");
 
         if(Configurations.featureEnabled("cloud"))
