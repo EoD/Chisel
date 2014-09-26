@@ -309,7 +309,7 @@ public class CarvableHelper
             if(block instanceof BlockMarbleSlab && ((BlockMarbleSlab) block).isBottom)
             {
                 BlockMarbleSlab slab = (BlockMarbleSlab) block;
-                slab.top.setHarvestLevel("chisel", 0, variation.metadata);
+                slab.top.setHarvestLevel(Chisel.toolclass, 0, variation.metadata);
 
                 if(!forbidChiseling)
                 {
@@ -329,11 +329,11 @@ public class CarvableHelper
         if(variation.block == null)
         {
             Carving.chisel.addVariation(name, block, blockMeta, variation.metadata);
-            block.setHarvestLevel("chisel", 0, blockMeta);
+            block.setHarvestLevel(Chisel.toolclass, 0, blockMeta);
         } else
         {
             Carving.chisel.addVariation(name, variation.block, variation.blockMeta, variation.metadata);
-            variation.block.setHarvestLevel("chisel", 0, variation.blockMeta);
+            variation.block.setHarvestLevel(Chisel.toolclass, 0, variation.blockMeta);
         }
     }
 
