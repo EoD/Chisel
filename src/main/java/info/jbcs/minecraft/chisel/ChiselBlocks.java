@@ -405,7 +405,7 @@ public class ChiselBlocks
 
         if(Configurations.featureEnabled("concrete"))
         {
-            blockConcrete = (BlockConcrete) new BlockConcrete().setStepSound(Block.soundTypeStone).setHardness(0.5F);
+            blockConcrete = (BlockConcrete) new BlockConcrete().setStepSound(Block.soundTypeStone).setHardness(2F).setResistance(10F);
             blockConcrete.carverHelper.addVariation(StatCollector.translateToLocal("chisel.tile.blockConcrete.0.desc"), 0, "concrete/default");
             blockConcrete.carverHelper.addVariation(StatCollector.translateToLocal("chisel.tile.blockConcrete.1.desc"), 1, "concrete/block");
             blockConcrete.carverHelper.addVariation(StatCollector.translateToLocal("chisel.tile.blockConcrete.2.desc"), 2, "concrete/doubleslab");
