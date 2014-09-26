@@ -17,9 +17,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemTool;
 import net.minecraft.world.World;
 
-import java.util.HashSet;
 import java.util.Random;
-import java.util.Set;
 
 import cpw.mods.fml.common.FMLCommonHandler;
 
@@ -27,7 +25,6 @@ public class ItemChisel extends ItemTool
 {
     Random random = new Random();
     public static Carving carving = Carving.chisel;
-    private static final HashSet<String> toolSet = new HashSet<String>();
 
     public ItemChisel()
     {
@@ -35,19 +32,13 @@ public class ItemChisel extends ItemTool
 
         setMaxStackSize(1);
         setMaxDamage(-1);
-        efficiencyOnProperMaterial = 100f;
+        efficiencyOnProperMaterial = 0.5f * super.efficiencyOnProperMaterial;
+        setHarvestLevel(Chisel.toolclass, ToolMaterial.IRON.getHarvestLevel());
 
         setUnlocalizedName("chisel");
         setTextureName("chisel:chisel");
 
-        toolSet.add("chisel");
         setCreativeTab(CreativeTabs.tabTools);
-    }
-
-    @Override
-    public Set<String> getToolClasses(ItemStack stack)
-    {
-        return toolSet;
     }
 
     @Override

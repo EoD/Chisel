@@ -46,6 +46,8 @@ public class Chisel
     public static final String MOD_ID = "chisel";
     public static final String MOD_NAME = "Chisel";
 
+    public static final String toolclass = "chisel";
+
     public static ItemChisel chisel;
     //	public static ItemChisel needle;
     public static ItemCloudInABottle itemCloudInABottle;
