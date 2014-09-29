@@ -51,6 +51,7 @@ public class ChiselBlocks
     public static BlockCarvablePowered blockRedstone;
     public static BlockHolystone blockHolystone;
     public static BlockLavastone blockLavastone;
+    public static BlockWaterstone blockWaterstone;
     public static BlockCarvable blockFft;
     public static BlockCarvable blockCarpet;
     public static BlockMarbleCarpet blockCarpetFloor;
@@ -921,6 +922,21 @@ public class ChiselBlocks
             blockLavastone.carverHelper.register(blockLavastone, "blockLavastone");
             OreDictionary.registerOre("blockLavastone", blockLavastone);
             Carving.chisel.registerOre("blockLavastone", "blockLavastone");
+        }
+        
+        if(Configurations.featureEnabled("waterstone"))
+        {
+            blockWaterstone = (BlockWaterstone) new BlockWaterstone(Material.rock, "water_flow").setHardness(2.0F).setResistance(10F);
+            blockWaterstone.carverHelper.addVariation(StatCollector.translateToLocal("chisel.tile.waterstone.0.desc"), 0, "fluidstone/cobble");
+            blockWaterstone.carverHelper.addVariation(StatCollector.translateToLocal("chisel.tile.waterstone.1.desc"), 1, "fluidstone/black");
+            blockWaterstone.carverHelper.addVariation(StatCollector.translateToLocal("chisel.tile.waterstone.2.desc"), 2, "fluidstone/tiles");
+            blockWaterstone.carverHelper.addVariation(StatCollector.translateToLocal("chisel.tile.waterstone.3.desc"), 3, "fluidstone/chaotic");
+            blockWaterstone.carverHelper.addVariation(StatCollector.translateToLocal("chisel.tile.waterstone.4.desc"), 4, "fluidstone/creeper");
+            blockWaterstone.carverHelper.addVariation(StatCollector.translateToLocal("chisel.tile.waterstone.5.desc"), 5, "fluidstone/panel");
+            blockWaterstone.carverHelper.addVariation(StatCollector.translateToLocal("chisel.tile.waterstone.6.desc"), 6, "fluidstone/panel-ornate");
+            blockWaterstone.carverHelper.register(blockWaterstone, "blockWaterstone");
+            OreDictionary.registerOre("blockWaterstone", blockWaterstone);
+            Carving.chisel.registerOre("blockWaterstone", "blockWaterstone");
         }
 
         if(Configurations.featureEnabled("fantasy"))

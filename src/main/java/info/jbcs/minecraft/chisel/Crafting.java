@@ -49,6 +49,7 @@ public class Crafting
 
         GameRegistry.addRecipe(new ItemStack(ChiselBlocks.blockHolystone, 8, 0), new Object[]{"***", "*X*", "***", '*', new ItemStack(Blocks.stone, 1), 'X', new ItemStack(Items.feather, 1)});
         GameRegistry.addRecipe(new ItemStack(ChiselBlocks.blockLavastone, 8, 0), new Object[]{"***", "*X*", "***", '*', new ItemStack(Blocks.stone, 1), 'X', new ItemStack(Items.lava_bucket, 1)});
+        GameRegistry.addRecipe(new ItemStack(ChiselBlocks.blockWaterstone, 8, 0), new Object[]{"***", "*X*", "***", '*', new ItemStack(Blocks.stone, 1), 'X', new ItemStack(Items.water_bucket, 1)});
         GameRegistry.addRecipe(new ItemStack(ChiselBlocks.blockFft, 8, 0), new Object[]{"***", "*X*", "***", '*', new ItemStack(Blocks.stone, 1), 'X', new ItemStack(Items.gold_nugget, 1)});
         GameRegistry.addRecipe(new ItemStack(ChiselBlocks.blockTyrian, 8, 0), new Object[]{"***", "*X*", "***", '*', new ItemStack(Blocks.stone, 1), 'X', new ItemStack(Items.iron_ingot, 1)});
         GameRegistry.addRecipe(new ItemStack(ChiselBlocks.blockTemple, 8, 0), new Object[]{"***", "*X*", "***", '*', new ItemStack(Blocks.stone, 1), 'X', new ItemStack(Items.dye, 1, 4)});
