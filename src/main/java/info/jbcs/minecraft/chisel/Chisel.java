@@ -19,13 +19,11 @@ import info.jbcs.minecraft.chisel.block.BlockCarvable;
 import info.jbcs.minecraft.chisel.client.gui.GuiChisel;
 import info.jbcs.minecraft.chisel.entity.EntityBallOMoss;
 import info.jbcs.minecraft.chisel.entity.EntityCloudInABottle;
-import info.jbcs.minecraft.chisel.entity.EntitySmashingRock;
 import info.jbcs.minecraft.chisel.inventory.ContainerChisel;
 import info.jbcs.minecraft.chisel.inventory.InventoryChiselSelection;
 import info.jbcs.minecraft.chisel.item.ItemBallOMoss;
 import info.jbcs.minecraft.chisel.item.ItemChisel;
 import info.jbcs.minecraft.chisel.item.ItemCloudInABottle;
-import info.jbcs.minecraft.chisel.item.ItemSmashingRock;
 import info.jbcs.minecraft.chisel.world.GeneratorLimestone;
 import info.jbcs.minecraft.chisel.world.GeneratorMarble;
 import info.jbcs.minecraft.utilities.General;
@@ -52,7 +50,6 @@ public class Chisel
     //	public static ItemChisel needle;
     public static ItemCloudInABottle itemCloudInABottle;
     public static ItemBallOMoss itemBallOMoss;
-    public static ItemSmashingRock smashingRock;
 
     public static CreativeTabs tabChisel;
 
@@ -160,12 +157,6 @@ public class Chisel
             GameRegistry.registerItem(itemBallOMoss, "ballomoss");
         }
 
-        if(Configurations.featureEnabled("smashingRock"))
-        {
-            smashingRock = (ItemSmashingRock) new ItemSmashingRock().setTextureName("Chisel:smashingrock").setCreativeTab(CreativeTabs.tabTools);
-            EntityRegistry.registerModEntity(EntitySmashingRock.class, "SmashingRock", 2, this, 40, 1, true);
-            GameRegistry.registerItem(smashingRock, "smashingrock");
-        }
         ChiselBlocks.load();
         proxy.preInit();
     }
