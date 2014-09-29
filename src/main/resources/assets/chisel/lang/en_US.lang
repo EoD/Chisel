@@ -605,6 +605,16 @@ chisel.tile.blockHolystone.name=Holystone
 #Lavastone
 chisel.tile.blockLavastone.name=Lavastone
 
+#Waterstone
+chisel.tile.blockWaterstone.name=Waterstone
+chisel.tile.waterstone.0.desc=Waterstone
+chisel.tile.waterstone.1.desc=Black Waterstone
+chisel.tile.waterstone.2.desc=Waterstone tiles
+chisel.tile.waterstone.3.desc=Chaotic waterstone bricks
+chisel.tile.waterstone.4.desc=Water creeper in tiles
+chisel.tile.waterstone.5.desc=Water panel
+chisel.tile.waterstone.6.desc=Ornate water panel
+
 #Carpet
 chisel.tile.blockCarpet.name=Carpet
 
