@@ -45,12 +45,10 @@ public class ItemChisel extends ItemTool
     @Override
     public boolean canHarvestBlock(Block block, ItemStack itemStack)
     {
-        final int metadata = itemStack.getItemDamage();
-
         // we don't want anyone to misuse the chisel as a replacement for a diamond pick
-        if (carving.isVariationOfSameClass(Blocks.obsidian, 0, block, metadata) && this.toolMaterial.getHarvestLevel() < 3)
+        if (this.toolMaterial.getHarvestLevel() < block.getHarvestLevel(0))
             return false;
-        else if (carving.isBlockCarvable(block, metadata))
+        else if (carving.isBlockCarvable(block))
             return true;
         else
             return super.canHarvestBlock(block, itemStack);
@@ -60,7 +58,9 @@ public class ItemChisel extends ItemTool
     public float getDigSpeed(ItemStack itemstack, Block block, int metadata)
     {
         // don't break glass with efficiency just because its carvable
-        if (!carving.isBlockCarvable(block, metadata) || block.getMaterial() == Material.glass)
+        if (block.getMaterial() == Material.glass
+                || this.toolMaterial.getHarvestLevel() < block.getHarvestLevel(metadata)
+                || !carving.isBlockCarvable(block, metadata))
             return super.getDigSpeed(itemstack, block, metadata);
         else
             return this.efficiencyOnProperMaterial;
