@@ -405,7 +405,7 @@ public class ChiselBlocks
 
         if(Configurations.featureEnabled("concrete"))
         {
-            blockConcrete = (BlockConcrete) new BlockConcrete().setStepSound(Block.soundTypeStone).setHardness(0.5F);
+            blockConcrete = (BlockConcrete) new BlockConcrete().setStepSound(Block.soundTypeStone).setHardness(2F).setResistance(10F);
             blockConcrete.carverHelper.addVariation(StatCollector.translateToLocal("chisel.tile.blockConcrete.0.desc"), 0, "concrete/default");
             blockConcrete.carverHelper.addVariation(StatCollector.translateToLocal("chisel.tile.blockConcrete.1.desc"), 1, "concrete/block");
             blockConcrete.carverHelper.addVariation(StatCollector.translateToLocal("chisel.tile.blockConcrete.2.desc"), 2, "concrete/doubleslab");
@@ -793,7 +793,6 @@ public class ChiselBlocks
                 }
                 blockPlanks[i].carverHelper.register(blockPlanks[i], "wood-" + n);
                 Carving.chisel.addVariation("wood-" + n, Blocks.planks, i, 0);
-                Blocks.planks.setHarvestLevel("chisel", 0, i);
                 blockPlanks[i].setHarvestLevel("axe", 0);
 
                 Carving.chisel.setVariationSound("wood-" + n, Chisel.MOD_ID+":chisel.wood");
@@ -1248,8 +1247,6 @@ public class ChiselBlocks
             blockLaboratory.carverHelper.addVariation(StatCollector.translateToLocal("chisel.tile.blockLaboratory.15.desc"), 15, "laboratory/infocon");
             blockLaboratory.carverHelper.register(blockLaboratory, "blockLaboratory");
         }
-
-        Blocks.stone.setHarvestLevel("chisel", 0, 0);
     }
 
 }

@@ -9,6 +9,7 @@ import info.jbcs.minecraft.chisel.carving.Carving;
 import info.jbcs.minecraft.chisel.carving.CarvingVariation;
 import info.jbcs.minecraft.chisel.client.GeneralChiselClient;
 import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
@@ -17,9 +18,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemTool;
 import net.minecraft.world.World;
 
-import java.util.HashSet;
 import java.util.Random;
-import java.util.Set;
 
 import cpw.mods.fml.common.FMLCommonHandler;
 
@@ -27,7 +26,6 @@ public class ItemChisel extends ItemTool
 {
     Random random = new Random();
     public static Carving carving = Carving.chisel;
-    private static final HashSet<String> toolSet = new HashSet<String>();
 
     public ItemChisel()
     {
@@ -35,19 +33,37 @@ public class ItemChisel extends ItemTool
 
         setMaxStackSize(1);
         setMaxDamage(-1);
-        efficiencyOnProperMaterial = 100f;
+        efficiencyOnProperMaterial = 0.5f * super.efficiencyOnProperMaterial;
+        setHarvestLevel(Chisel.toolclass, ToolMaterial.IRON.getHarvestLevel());
 
         setUnlocalizedName("chisel");
         setTextureName("chisel:chisel");
 
-        toolSet.add("chisel");
         setCreativeTab(CreativeTabs.tabTools);
     }
 
     @Override
-    public Set<String> getToolClasses(ItemStack stack)
+    public boolean canHarvestBlock(Block block, ItemStack itemStack)
     {
-        return toolSet;
+        // we don't want anyone to misuse the chisel as a replacement for a diamond pick
+        if (this.toolMaterial.getHarvestLevel() < block.getHarvestLevel(0))
+            return false;
+        else if (carving.isBlockCarvable(block))
+            return true;
+        else
+            return super.canHarvestBlock(block, itemStack);
+    }
+
+    @Override
+    public float getDigSpeed(ItemStack itemstack, Block block, int metadata)
+    {
+        // don't break glass with efficiency just because its carvable
+        if (block.getMaterial() == Material.glass
+                || this.toolMaterial.getHarvestLevel() < block.getHarvestLevel(metadata)
+                || !carving.isBlockCarvable(block, metadata))
+            return super.getDigSpeed(itemstack, block, metadata);
+        else
+            return this.efficiencyOnProperMaterial;
     }
 
     @Override
