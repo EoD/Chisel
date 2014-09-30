@@ -1,92 +1,155 @@
 1.5.7:
-Added the Laboratory block, a fancy new block added by GravitasShortfall
-Fixed issues with left clicking with the Chisel, thanks to Lordmau5/Konata
-Some locale things added so its not all only english.
-Fixes issues with crafting with sandstone blocks.
-Potentially fixes a issue with marble/limestone generation on multiplayer.
+- Added the Laboratory block, a fancy new block added by GravitasShortfall
+- Fixed issues with left clicking with the Chisel, thanks to Lordmau5/Konata
+- Some locale things added so its not all only english.
+- Fixes issues with crafting with sandstone blocks.
+- Potentially fixes a issue with marble/limestone generation on multiplayer.
 
-1.5.6b
-Fixed ice pillar crafting issue.
-Sounds work now.
-Bluepower support for marble (Haven't tested due to time issues <,<)
-Project Red support for marble fixed.
-Fixed the config for the Chisel crafting recipe.
+1.5.6b:
+- Fixed ice pillar crafting issue.
+- Sounds work now.
+- Bluepower support for marble (Haven't tested due to time issues <,<)
+- Project Red support for marble fixed.
+- Fixed the config for the Chisel crafting recipe.
 
-1.5.6a
-Correct render for Lavastone.
-Stained Glass can now be made.
-Waila for block descriptions (Thanks to Parker8283 for the PR :3 )
-Fixed configuration for world generation
+1.5.6a:
+- Correct render for Lavastone.
+- Stained Glass can now be made.
+- Waila for block descriptions (Thanks to Parker8283 for the PR :3 )
+- Fixed configuration for world generation
 
-1.5.6
-Woolen Clay, textures by the all mighty shoop :)
-Japanese Paperwalls! Textures by Sayomi_Inoue
-Config for allowing you to create mossy brick from stone.
-Maybe I'm trying to confuse you again?
+1.5.6:
+- Woolen Clay, textures by the all mighty shoop :)
+- Japanese Paperwalls! Textures by Sayomi_Inoue
+- Config for allowing you to create mossy brick from stone.
+- Maybe I'm trying to confuse you again?
 
-1.5.5a
-Fixed the unintended feature of crashing on servers.
-Maybe a secret hidden? Or i just feel like messing with you.
+1.5.5a:
+- Fixed the unintended feature of crashing on servers.
+- Maybe a secret hidden? Or i just feel like messing with you.
 
-1.5.5
-Major parts of this update is brought to you by Zombiepig333, so go thank him :)
-Config for the amount of factory blocks you get.
-Half done locale support (For some block descriptions and the names)
-Works on 1.7.10 now, no crashes from AABB changes.
-Few bug fixes.
+1.5.5:
+- Major parts of this update is brought to you by Zombiepig333, so go thank him :)
+- Config for the amount of factory blocks you get.
+- Half done locale support (For some block descriptions and the names)
+- Works on 1.7.10 now, no crashes from AABB changes.
+- Few bug fixes.
 
-1.5.4g
-Fixed the latest crash with random items in the chisel inventory, will require Forge 1126 or above now.
-Fixed dirt blocks being able to give you blocks with no texture, this will shift the metadata in world, though!
-Few derps with the crafting stuff, now uses FMLs implementation of it.
+1.5.4g:
+- Fixed the latest crash with random items in the chisel inventory, will require Forge 1126 or above now.
+- Fixed dirt blocks being able to give you blocks with no texture, this will shift the metadata in world, though!
+- Few derps with the crafting stuff, now uses FMLs implementation of it.
 
-1.5.4f
-Fixed a crash with the latest forge, you will now need to use the latest recommended :)
-Recipe for the road marker thingy.
-Fixed the dirt block issues.
-PR from anti334 that changes how the connected textures working, making them work better.
+1.5.4f:
+- Fixed a crash with the latest forge, you will now need to use the latest recommended :)
+- Recipe for the road marker thingy.
+- Fixed the dirt block issues.
+- PR from anti334 that changes how the connected textures working, making them work better.
 
-1.5.4e
-Fixed the issue of glowstone dropping the wrong metadata.
-Added in gregs suggestion of gem/metal blocks being usable in beacon bases
+1.5.4e:
+- Fixed the issue of glowstone dropping the wrong metadata.
+- Added in gregs suggestion of gem/metal blocks being usable in beacon bases
 
-1.5.4d
-Fixed a derp with nether brick not being carvable, thanks to Soaryn for finding that derp :P
+1.5.4d:
+- Fixed a derp with nether brick not being carvable, thanks to Soaryn for finding that derp :P
 
-1.5.4c
-Fixed a crash bug with Carpenter's Blocks.
-Updated compatibility with Mariculture.
+1.5.4c:
+- Fixed a crash bug with Carpenter's Blocks.
+- Updated compatibility with Mariculture.
 
-1.5.4b
-Fixed a small issue, thanks to tambry, this is the problem of taking over mods >.>
+1.5.4b:
+- Fixed a small issue, thanks to tambry, this is the problem of taking over mods >.>
 
 1.5.4a:
-Lavastone now emits light.
-Fixed issue with slabs, they can't be placed on the top of a block, will rewrite them soon.
-Noticed weird version issues >.>
-Fixed minor bugs
-Removed redundant System.out.println
-Smashing Rock is there, without texture and uncraftable, just ignore it for now :)
+- Lavastone now emits light.
+- Fixed issue with slabs, they can't be placed on the top of a block, will rewrite them soon.
+- Noticed weird version issues >.>
+- Fixed minor bugs
+- Removed redundant System.out.println
+- Smashing Rock is there, without texture and uncraftable, just ignore it for now :)
 
 1.5.4:
-Fixed a few crashes client side with the Moss and Cloud projectile.
-Removed AsieLib dependancy.
-Added in a config option for cloud rendering.
-Fixed a few misc bugs.
+- Fixed a few crashes client side with the Moss and Cloud projectile.
+- Removed AsieLib dependancy.
+- Added in a config option for cloud rendering.
+- Fixed a few misc bugs.
 
-Asies changes:
+1.5.3 (18 March 2014):
+- Added: Far more config-level configurability for the mod's available features and behaviour.
+- Changed: The config format. Cleaned it up a bit. Watch out!
+- Fixed: Marble stairs and limestone stairs now work!
+- Fixed: Partially attempted to fix the “left-click-with-chisel to make block disappear” bug.
 
-1.5.3 (18 March 2014)
-Added: Far more config-level configurability for the mod's available features and behaviour.
-Changed: The config format. Cleaned it up a bit. Watch out!
-Fixed: Marble stairs and limestone stairs now work!
-Fixed: Partially attempted to fix the “left-click-with-chisel to make block disappear” bug.
-1.5.2 (17 March 2014)
-Added: Chiselable Stained Glass and Stained Glass Panes.
-Changed: Textures are now compressed with pngout, cutting the mod's size from 4MB to 2.1MB - an almost 50% reduction!
-Changed: The internal mod-specific names used in the GameRegistry. worlds saved with Chisel 1.5.1 will *not* be compatible, and worlds saved with Minecraft 1.6.4 and below probably will not convert perfectly as well, but this was done for the better - mod collisions could've and would've happened otherwise.
-Fixed: NPE with certain blocks' rendering.
-1.5.1 (16 March 2014)
-Ported to Minecraft 1.7.2.
-Added: Support for Acacia and Dark Oak planks.
-Removed: Overriding vanilla blocks.
+1.5.2 (17 March 2014):
+- Added: Chiselable Stained Glass and Stained Glass Panes.
+- Changed: Textures are now compressed with pngout, cutting the mod's size from 4MB to 2.1MB - an almost 50% reduction!
+- Changed: The internal mod-specific names used in the GameRegistry. worlds saved with Chisel 1.5.1 will *not* be compatible, and worlds saved with Minecraft 1.6.4 and below probably will not convert perfectly as well, but this was done for the better - mod collisions could've and would've happened otherwise.
+- Fixed: NPE with certain blocks' rendering.
+
+1.5.1 (16 March 2014):
+- Ported to Minecraft 1.7.2.
+- Added: Support for Acacia and Dark Oak planks.
+- Removed: Overriding vanilla blocks.
+
+1.5.0:
+- Now requires Autoutils mod.
+- Shows same block name for all variations and shows variation name on a separate line in tooltip. Can revert to old behavior in config file.
+
+1.4.11:
+- Fixed standalone server crash related to ball of moss.
+- Fixed chisel block items looking larger than default block items.
+
+1.4.10:
+- Added connected textures to almost every block for which connected textures make sense, along with an option to disable connected textures.
+- Added factory block.
+- Added floor carpets, just like in vanilla.
+- Added a block from Eldritch game with non-flat sides giving it a funny look.
+- Added cloud in a bottle item that spawns clouds at the location you throw it at.
+- Added a ball-o-moss item that turns stone into its mossy variation at the location you throw it at.
+- Added mod compatibility: you can chisel other mods' marble and limestone bocks into my variations and back. Affected mods are: artifice, numirp, projectred, mariculture, emasher, geostrata.
+- Added a setting to change the ingredient for concrete smelting recipe: from gravel to anything.
+- Fixed middle clicking glowstone not producing the right result in creative
+- Fixed mining level on various added blocks
+- Fixed a small visual bug with digging effects (thanks, neptunepink)
+- Fixed top half slabs not breaking properly
+
+1.4.9:
+- Snakestone drops fixed
+- Carpets can't be chiseled anymore
+
+1.4.7:
+- Item dupe bug fixed.
+
+1.4.5:
+Features:
+- Slabs can be placed upside down.
+- Stairs can now be placed upside down and work similarly to vanilla stairs.
+- Added variations for redstone block.
+- Added holystone block, crafted with 8 stones and 1 feather.
+- Added lavastone block, crafted with 8 stones and 1 bucket of lava.
+Fixes:
+- Snakes drop proper blocks when broken.
+- Creatures no longer drown in concrete.
+- Stair blocks break properly.
+- Stairs render properly even when a block is placed on top of them.
+
+1.4.3:
+- Added a setting to not replace vanilla blocks and instead create new ones.
+- Fixed glass rendering with CTM.
+- Changed getIcon() to return the 'texture missing' icon instead of null. This will probably fix the crash for BuildCraft.
+
+1.4.0:
+- Three new blocks: stone snake, sandstone snake, obsidian snake. They behave very similarly to naga blocks from twilight forest mod (which is where I got inspiration from). You get them by chiseling stone bricks, sandstone and obsidian.
+
+1.3.0:
+- Right click a block with an empty chisel to carve it into a random variation.
+- Reworked sandstone: brought back original sandstone variations that I accidentally overwrote with my blocks.
+- Other sandstone blocks also changed to resemble vanilla blocks more.
+- You can craft one smooth & flat sandstone block into one sandstone scribbles block, also carvable.
+- Added obsidian and wood planks variations (for all 4 kinds of wood).
+- Added concrete block, which you get by smelting gravel. Walking on a concrete road increases your movement speed considerably (speed boost can be changed/disabled).
+
+1.2.0:
+- Place a block into chisel, and close the inventory, leaving it there.
+- Now left click some other block to carve it into the one you have inside your chisel.
+- Ice variations, the behavior of the default Minecraft block is changed. When you break ice, it does not spawn water, but drops 1-5 ice shards. Four can be crafted into an ice block. This mechanic can be disabled in config file.
