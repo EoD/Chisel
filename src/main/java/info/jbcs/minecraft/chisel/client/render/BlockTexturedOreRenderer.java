@@ -14,8 +14,9 @@ import cpw.mods.fml.client.registry.RenderingRegistry;
 
 public class BlockTexturedOreRenderer implements ISimpleBlockRenderingHandler
 {
-    float bot = -0.001f, top = 1.0f - bot;
+    static final float bot = -0.001f, top = 1.0f - bot;
     public static int id;
+    BlockAdvancedMarbleRenderer rendererAdvanced = new BlockAdvancedMarbleRenderer();
 
     public BlockTexturedOreRenderer()
     {
@@ -64,12 +65,12 @@ public class BlockTexturedOreRenderer implements ISimpleBlockRenderingHandler
                 renderer.overrideBlockTexture = null;
             } else if(block.base != null)
             {
-                renderer.renderBlockByRenderType(block.base, x, y, z);
+                rendererAdvanced.renderWorldBlock(world, x, y, z, block, -1, renderer);
             }
         } else
         {
             renderer.setRenderBounds(bot, bot, bot, top, top, top);
-            renderer.renderStandardBlock(block, x, y, z);
+            rendererAdvanced.renderWorldBlock(world, x, y, z, block, -1, renderer);
         }
 
         return true;
