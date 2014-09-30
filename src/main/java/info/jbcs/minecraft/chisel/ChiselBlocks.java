@@ -917,13 +917,13 @@ public class ChiselBlocks
             blockLavastone.carverHelper.addVariation("Lavastone tiles", 2, "lavastone/tiles");
             blockLavastone.carverHelper.addVariation("Chaotic lavastone bricks", 3, "lavastone/chaotic");
             blockLavastone.carverHelper.addVariation("Lava creeper in tiles", 4, "lavastone/creeper");
-            blockLavastone.carverHelper.addVariation("Lava panel", 5, "lavastone/panel");
-            blockLavastone.carverHelper.addVariation("Ornate lava panel", 6, "lavastone/panel-ornate");
+            blockLavastone.carverHelper.addVariation("Lava panel", 5, "fluidstone/panel");
+            blockLavastone.carverHelper.addVariation("Ornate lava panel", 6, "fluidstone/panel-ornate");
             blockLavastone.carverHelper.register(blockLavastone, "blockLavastone");
             OreDictionary.registerOre("blockLavastone", blockLavastone);
             Carving.chisel.registerOre("blockLavastone", "blockLavastone");
         }
-        
+
         if(Configurations.featureEnabled("waterstone"))
         {
             blockWaterstone = (BlockWaterstone) new BlockWaterstone(Material.rock, "water_flow").setHardness(2.0F).setResistance(10F);
