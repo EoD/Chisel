@@ -74,7 +74,7 @@ public class EntitySnakestoneObsidianFX extends EntityFX
     public void renderParticle(Tessellator tessellator, float partialTick, float rotX, float rotXZ, float rotZ, float rotYZ, float rotXY)
     {
         GL11.glDepthMask(false);
-        GL11.glEnable(3042);
+        GL11.glEnable(GL11.GL_BLEND);
         GL11.glBlendFunc(770, 771);
         super.renderParticle(tessellator, partialTick, rotX, rotXZ, rotZ, rotYZ, rotXY);
     }

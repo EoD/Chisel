@@ -41,12 +41,12 @@ public class BlockTexturedOreRenderer implements ISimpleBlockRenderingHandler
             renderer.renderBlockAsItem(block.base, meta, 1.0f);
         }
 
-        GL11.glEnable(3042);
+        GL11.glEnable(GL11.GL_BLEND);
         GL11.glBlendFunc(770, 771);
         renderer.setRenderBounds(bot, bot, bot, top, top, top);
         GL11.glTranslatef(-0.5F, -0.5F, -0.5F);
         Drawing.drawBlock(block, meta, renderer);
-        GL11.glDisable(3042);
+        GL11.glDisable(GL11.GL_BLEND);
     }
 
     @Override
