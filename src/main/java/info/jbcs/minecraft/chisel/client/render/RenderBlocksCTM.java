@@ -16,15 +16,15 @@ public class RenderBlocksCTM extends RenderBlocks
     }
 
     Tessellator tessellator;
-    double[] X = new double[26];
-    double[] Y = new double[26];
-    double[] Z = new double[26];
-    double[] U = new double[26];
-    double[] V = new double[26];
-    int[] L = new int[26];
-    float[] R = new float[26];
-    float[] G = new float[26];
-    float[] B = new float[26];
+    private final static double[] X = new double[26];
+    private final static double[] Y = new double[26];
+    private final static double[] Z = new double[26];
+    private final static double[] U = new double[26];
+    private final static double[] V = new double[26];
+    private final static int[] L = new int[26];
+    private final static float[] R = new float[26];
+    private final static float[] G = new float[26];
+    private final static float[] B = new float[26];
     TextureSubmap submap;
     TextureSubmap submapSmall;
     RenderBlocks rendererOld;
@@ -42,6 +42,7 @@ public class RenderBlocksCTM extends RenderBlocks
         tessellator.setColorOpaque_F(1.0F, 1.0F, 1.0F);
 
         tessellator.addTranslation(x, y, z);
+        resetVertices();
 
         boolean res = super.renderStandardBlock(block, x, y, z);
 
@@ -270,108 +271,109 @@ public class RenderBlocksCTM extends RenderBlocks
 
     void resetVertices()
     {
-        X[0] = 0;
-        Z[0] = 0;
-        Y[0] = 0;
 
-        X[1] = 0;
-        Z[1] = 0;
-        Y[1] = 1;
+        X[0] = this.renderMinX;
+        Z[0] = this.renderMinZ;
+        Y[0] = this.renderMinY;
 
-        X[2] = 1;
-        Z[2] = 0;
-        Y[2] = 1;
+        X[1] = this.renderMinX;
+        Z[1] = this.renderMinZ;
+        Y[1] = this.renderMaxY;
 
-        X[3] = 1;
-        Z[3] = 0;
-        Y[3] = 0;
+        X[2] = this.renderMaxX;
+        Z[2] = this.renderMinZ;
+        Y[2] = this.renderMaxY;
 
-        X[4] = 0;
-        Z[4] = 1;
-        Y[4] = 0;
+        X[3] = this.renderMaxX;
+        Z[3] = this.renderMinZ;
+        Y[3] = this.renderMinY;
 
-        X[5] = 0;
-        Z[5] = 1;
-        Y[5] = 1;
+        X[4] = this.renderMinX;
+        Z[4] = this.renderMaxZ;
+        Y[4] = this.renderMinY;
 
-        X[6] = 1;
-        Z[6] = 1;
-        Y[6] = 1;
+        X[5] = this.renderMinX;
+        Z[5] = this.renderMaxZ;
+        Y[5] = this.renderMaxY;
 
-        X[7] = 1;
-        Z[7] = 1;
-        Y[7] = 0;
+        X[6] = this.renderMaxX;
+        Z[6] = this.renderMaxZ;
+        Y[6] = this.renderMaxY;
 
-        X[8] = 0.5;
-        Z[8] = 0;
-        Y[8] = 0.5;
+        X[7] = this.renderMaxX;
+        Z[7] = this.renderMaxZ;
+        Y[7] = this.renderMinY;
 
-        X[9] = 0;
-        Z[9] = 0.5;
-        Y[9] = 0.5;
+        X[8] = (this.renderMaxX - this.renderMinX) / 2.0f;
+        Z[8] = this.renderMinZ;
+        Y[8] = (this.renderMaxY - this.renderMinY) / 2.0f;
 
-        X[10] = 0.5;
-        Z[10] = 1;
-        Y[10] = 0.5;
+        X[9] = this.renderMinX;
+        Z[9] = (this.renderMaxZ - this.renderMinZ) / 2.0f;
+        Y[9] = (this.renderMaxY - this.renderMinY) / 2.0f;
 
-        X[11] = 1;
-        Z[11] = 0.5;
-        Y[11] = 0.5;
+        X[10] = (this.renderMaxX - this.renderMinX) / 2.0f;
+        Z[10] = this.renderMaxZ;
+        Y[10] = (this.renderMaxY - this.renderMinY) / 2.0f;
 
-        X[12] = 0.5;
-        Z[12] = 0.5;
-        Y[12] = 1;
+        X[11] = this.renderMaxX;
+        Z[11] = (this.renderMaxZ - this.renderMinZ) / 2.0f;
+        Y[11] = (this.renderMaxY - this.renderMinY) / 2.0f;
 
-        X[13] = 0.5;
-        Z[13] = 0.5;
-        Y[13] = 0;
+        X[12] = (this.renderMaxX - this.renderMinX) / 2.0f;
+        Z[12] = (this.renderMaxZ - this.renderMinZ) / 2.0f;
+        Y[12] = this.renderMaxY;
 
-        X[14] = 0;
-        Z[14] = 0;
-        Y[14] = 0.5;
+        X[13] = (this.renderMaxX - this.renderMinX) / 2.0f;
+        Z[13] = (this.renderMaxZ - this.renderMinZ) / 2.0f;
+        Y[13] = this.renderMinY;
 
-        X[15] = 1;
-        Z[15] = 0;
-        Y[15] = 0.5;
+        X[14] = this.renderMinX;
+        Z[14] = this.renderMinZ;
+        Y[14] = (this.renderMaxY - this.renderMinY) / 2.0f;
 
-        X[16] = 1;
-        Z[16] = 1;
-        Y[16] = 0.5;
+        X[15] = this.renderMaxX;
+        Z[15] = this.renderMinZ;
+        Y[15] = (this.renderMaxY - this.renderMinY) / 2.0f;
 
-        X[17] = 0;
-        Z[17] = 1;
-        Y[17] = 0.5;
+        X[16] = this.renderMaxX;
+        Z[16] = this.renderMaxZ;
+        Y[16] = (this.renderMaxY - this.renderMinY) / 2.0f;
 
-        X[18] = 0.5;
-        Z[18] = 0;
-        Y[18] = 0;
+        X[17] = this.renderMinX;
+        Z[17] = this.renderMaxZ;
+        Y[17] = (this.renderMaxY - this.renderMinY) / 2.0f;
 
-        X[19] = 0;
-        Z[19] = 0.5;
-        Y[19] = 0;
+        X[18] = (this.renderMaxX - this.renderMinX) / 2.0f;
+        Z[18] = this.renderMinZ;
+        Y[18] = this.renderMinY;
 
-        X[20] = 0.5;
-        Z[20] = 1;
-        Y[20] = 0;
+        X[19] = this.renderMinX;
+        Z[19] = (this.renderMaxZ - this.renderMinZ) / 2.0f;
+        Y[19] = this.renderMinY;
 
-        X[21] = 1;
-        Z[21] = 0.5;
-        Y[21] = 0;
+        X[20] = (this.renderMaxX - this.renderMinX) / 2.0f;
+        Z[20] = this.renderMaxZ;
+        Y[20] = this.renderMinY;
 
-        X[22] = 0.5;
-        Z[22] = 0;
-        Y[22] = 1;
+        X[21] = this.renderMaxX;
+        Z[21] = (this.renderMaxZ - this.renderMinZ) / 2.0f;
+        Y[21] = this.renderMinY;
 
-        X[23] = 0;
-        Z[23] = 0.5;
-        Y[23] = 1;
+        X[22] = (this.renderMaxX - this.renderMinX) / 2.0f;
+        Z[22] = this.renderMinZ;
+        Y[22] = this.renderMaxY;
 
-        X[24] = 0.5;
-        Z[24] = 1;
-        Y[24] = 1;
+        X[23] = this.renderMinX;
+        Z[23] = (this.renderMaxZ - this.renderMinZ) / 2.0f;
+        Y[23] = this.renderMaxY;
 
-        X[25] = 1;
-        Z[25] = 0.5;
-        Y[25] = 1;
+        X[24] = (this.renderMaxX - this.renderMinX) / 2.0f;
+        Z[24] = this.renderMaxZ;
+        Y[24] = this.renderMaxY;
+
+        X[25] = this.renderMaxX;
+        Z[25] = (this.renderMaxZ - this.renderMinZ) / 2.0f;
+        Y[25] = this.renderMaxY;
     }
 }

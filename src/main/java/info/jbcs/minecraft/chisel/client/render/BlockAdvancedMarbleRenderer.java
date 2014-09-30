@@ -47,9 +47,9 @@ public class BlockAdvancedMarbleRenderer implements ISimpleBlockRenderingHandler
         {
             case CarvableHelper.CTMX:
                 rendererCTM.blockAccess = world;
-                rendererCTM.renderMaxX = 1.0;
-                rendererCTM.renderMaxY = 1.0;
-                rendererCTM.renderMaxZ = 1.0;
+                rendererCTM.setRenderBounds(
+                        rendererOld.renderMinX, rendererOld.renderMinY, rendererOld.renderMinZ,
+                        rendererOld.renderMaxX, rendererOld.renderMaxY, rendererOld.renderMaxZ );
 
                 rendererCTM.submap = var.submap;
                 rendererCTM.submapSmall = var.submapSmall;
@@ -59,9 +59,9 @@ public class BlockAdvancedMarbleRenderer implements ISimpleBlockRenderingHandler
                 return rendererCTM.renderStandardBlock(block, x, y, z);
             case CarvableHelper.CTMV:
                 rendererColumn.blockAccess = world;
-                rendererColumn.renderMaxX = 1.0;
-                rendererColumn.renderMaxY = 1.0;
-                rendererColumn.renderMaxZ = 1.0;
+                rendererColumn.setRenderBounds(
+                        rendererOld.renderMinX, rendererOld.renderMinY, rendererOld.renderMinZ,
+                        rendererOld.renderMaxX, rendererOld.renderMaxY, rendererOld.renderMaxZ );
 
                 rendererColumn.submap = var.seamsCtmVert;
                 rendererColumn.iconTop = var.iconTop;
