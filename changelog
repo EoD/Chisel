@@ -1,3 +1,17 @@
+1.5.8.2:
+- Added connected textures for both Lavastone and Waterstone (looks amazing!)
+- Fix Concrete connected texture
+- Fix HarvestLevel on most carvable blocks (no more obsidian mining with an iron tool)
+- More code cleanup
+
+1.5.8.1:
+- Added right-click functionality back. It will carve the block to it's equivalent inside the chisel and will do a random selection if chisel is empty
+- Added left-click functionality. It is now a fully functional tool, so if you misplaced a block you can easily remove it again. Works only on carvable blocks!
+- Added Waterstone, an equivalent to Lavastone with water inside and new transparent textures.
+- Fix resistance and hardness of Concrete
+- Compatibility for both minecraft versions 1.7.2 AND 1.7.10!
+- A lot of code cleanup
+
 1.5.7:
 - Added the Laboratory block, a fancy new block added by GravitasShortfall
 - Fixed issues with left clicking with the Chisel, thanks to Lordmau5/Konata
