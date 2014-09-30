@@ -419,6 +419,7 @@ public class ChiselBlocks
             blockConcrete.carverHelper.addVariation(StatCollector.translateToLocal("chisel.tile.blockConcrete.9.desc"), 9, "concrete/weathered-block-half");
             blockConcrete.carverHelper.addVariation(StatCollector.translateToLocal("chisel.tile.blockConcrete.10.desc"), 10, "concrete/asphalt");
             blockConcrete.carverHelper.register(blockConcrete, "concrete");
+            blockConcrete.setHarvestLevel("pickaxe", 1);
             OreDictionary.registerOre("blockConcrete", blockConcrete);
             Carving.chisel.registerOre("concrete", "blockConcrete");
         }
@@ -451,6 +452,7 @@ public class ChiselBlocks
             blockIron.carverHelper.addVariation(StatCollector.translateToLocal("chisel.tile.iron.14.desc"), 14, "iron/terrain-iron-vents");
             blockIron.carverHelper.addVariation(StatCollector.translateToLocal("chisel.tile.iron.15.desc"), 15, "iron/terrain-iron-simple");
             blockIron.carverHelper.register(blockIron, "iron");
+            blockIron.setHarvestLevel("pickaxe", 1);
             Carving.chisel.registerOre("iron", "blockIron");
         }
 
@@ -473,6 +475,7 @@ public class ChiselBlocks
             blockGold.carverHelper.addVariation(StatCollector.translateToLocal("chisel.tile.gold.13.desc"), 13, "gold/terrain-gold-spaceblack");
             blockGold.carverHelper.addVariation(StatCollector.translateToLocal("chisel.tile.gold.14.desc"), 14, "gold/terrain-gold-simple");
             blockGold.carverHelper.register(blockGold, "gold");
+            blockGold.setHarvestLevel("pickaxe", 2);
             Carving.chisel.registerOre("gold", "blockGold");
         }
 
@@ -493,6 +496,7 @@ public class ChiselBlocks
             blockDiamond.carverHelper.addVariation(StatCollector.translateToLocal("chisel.tile.diamond.11.desc"), 11, "diamond/a1-blockdiamond-zelda");
             blockDiamond.carverHelper.addVariation(StatCollector.translateToLocal("chisel.tile.diamond.12.desc"), 12, "diamond/a1-blockdiamond-ornatelayer");
             blockDiamond.carverHelper.register(blockDiamond, "diamond");
+            blockDiamond.setHarvestLevel("pickaxe", 2);
             Carving.chisel.registerOre("diamond", "blockDiamond");
         }
 
@@ -532,6 +536,7 @@ public class ChiselBlocks
             blockLapis.carverHelper.addVariation(StatCollector.translateToLocal("chisel.tile.lapis.7.desc"), 7, "lapis/a1-blocklapis-smooth");
             blockLapis.carverHelper.addVariation(StatCollector.translateToLocal("chisel.tile.lapis.8.desc"), 8, "lapis/a1-blocklapis-ornatelayer");
             blockLapis.carverHelper.register(blockLapis, "lapis");
+            blockLapis.setHarvestLevel("pickaxe", 1);
             Carving.chisel.registerOre("lapis", "blockLapis");
         }
 
@@ -551,6 +556,7 @@ public class ChiselBlocks
             blockEmerald.carverHelper.addVariation(StatCollector.translateToLocal("chisel.tile.emerald.10.desc"), 10, "emerald/a1-blockquartz-fourornate");
             blockEmerald.carverHelper.addVariation(StatCollector.translateToLocal("chisel.tile.emerald.11.desc"), 11, "emerald/a1-blockquartz-ornate");
             blockEmerald.carverHelper.register(blockEmerald, "emerald");
+            blockEmerald.setHarvestLevel("pickaxe", 2);
             Carving.chisel.registerOre("emerald", "blockEmerald");
         }
 
@@ -654,6 +660,7 @@ public class ChiselBlocks
         if(Configurations.featureEnabled("snakestone"))
         {
             blockSnakestone = (BlockSnakestone) new BlockSnakestone("Chisel:snakestone/snake/").setBlockName("snakestoneStone");
+            blockSnakestone.setHarvestLevel("pickaxe", 0);
             GameRegistry.registerBlock(blockSnakestone, ItemCarvable.class, blockSnakestone.getUnlocalizedName());
             //LanguageRegistry.addName(new ItemStack(blockSnakestone, 1, 1), "Stone snake block head");
             //LanguageRegistry.addName(new ItemStack(blockSnakestone, 1, 13), "Stone snake block body");
@@ -820,12 +827,14 @@ public class ChiselBlocks
             blockObsidian.carverHelper.addVariation(StatCollector.translateToLocal("chisel.tile.obsidian.14.desc"), 14, "obsidian/greek");
             blockObsidian.carverHelper.addVariation(StatCollector.translateToLocal("chisel.tile.obsidian.15.desc"), 15, "obsidian/crate");
             blockObsidian.carverHelper.register(blockObsidian, "obsidian");
+            blockObsidian.setHarvestLevel("pickaxe", 3);
             Carving.chisel.registerOre("obsidian", "blockObsidian");
         }
 
         if(Configurations.featureEnabled("snakestoneObsidian"))
         {
             blockObsidianSnakestone = (BlockSnakestoneObsidian) new BlockSnakestoneObsidian("Chisel:snakestone/obsidian/").setBlockName("obsidianSnakestone").setHardness(50.0F).setResistance(2000.0F);
+            blockObsidianSnakestone.setHarvestLevel("pickaxe", 3);
             GameRegistry.registerBlock(blockObsidianSnakestone, ItemCarvable.class, blockObsidianSnakestone.getUnlocalizedName());
             //LanguageRegistry.addName(new ItemStack(blockObsidianSnakestone, 1, 1), "Obsidian snakestone head");
             //LanguageRegistry.addName(new ItemStack(blockObsidianSnakestone, 1, 13), "Obsidian snakestone body");
@@ -1123,7 +1132,7 @@ public class ChiselBlocks
 
         if(Configurations.featureEnabled("factory"))
         {
-            blockFactory = (BlockCarvable) new BlockCarvable().setHardness(2.0F).setResistance(10F).setStepSound(Chisel.soundMetalFootstep);
+            blockFactory = (BlockCarvable) new BlockCarvable(Material.iron).setHardness(2.0F).setResistance(10F).setStepSound(Chisel.soundMetalFootstep);
             blockFactory.carverHelper.setChiselBlockName("blockFactory");
             blockFactory.carverHelper.addVariation(StatCollector.translateToLocal("chisel.tile.blockFactory.0.desc"), 0, "factory/dots");
             blockFactory.carverHelper.addVariation(StatCollector.translateToLocal("chisel.tile.blockFactory.1.desc"), 1, "factory/rust2");
