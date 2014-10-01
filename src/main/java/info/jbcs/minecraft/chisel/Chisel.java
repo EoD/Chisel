@@ -81,7 +81,11 @@ public class Chisel
             {
                 m.warn();//(Action.WARN);
             }
-
+            // smashingrock was never finished, remove it silently from any 1.5.8+ game
+            else if (m.name.equals("chisel:smashingrock"))
+            {
+                m.ignore();
+            }
             // Fix mapping of snakestoneSand, snakestoneStone, limestoneStairs, marbleStairs when loading an old (1.5.4) save
             else if(m.type == Type.BLOCK)
             {
