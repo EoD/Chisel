@@ -1,3 +1,6 @@
+1.5.8.4:
+- fix rendering crash with Lavastone/Fluidstone
+
 1.5.8.2:
 - Added connected textures for both Lavastone and Waterstone (looks amazing!)
 - Fix Concrete connected texture
