@@ -55,25 +55,27 @@ public class BlockTexturedOreRenderer implements ISimpleBlockRenderingHandler
         if(blck == null || !(blck instanceof BlockTexturedOre))
             return false;
         BlockTexturedOre block = (BlockTexturedOre) blck;
+        boolean result = false;
 
         if(block.currentPass == 0)
         {
             if(block.icon != null)
             {
                 renderer.overrideBlockTexture = block.icon;
-                renderer.renderStandardBlock(block, x, y, z);
+                result = renderer.renderStandardBlock(block, x, y, z);
                 renderer.overrideBlockTexture = null;
             } else if(block.base != null)
             {
-                rendererAdvanced.renderWorldBlock(world, x, y, z, block, -1, renderer);
+                // TODO use renderBlockByRenderType for block.getRenderType != 0
+                result = rendererAdvanced.renderWorldBlock(world, x, y, z, block, -1, renderer);
             }
         } else
         {
             renderer.setRenderBounds(bot, bot, bot, top, top, top);
-            rendererAdvanced.renderWorldBlock(world, x, y, z, block, -1, renderer);
+            result = rendererAdvanced.renderWorldBlock(world, x, y, z, block, -1, renderer);
         }
 
-        return true;
+        return result;
     }
 
     @Override
