@@ -1,5 +1,6 @@
 package info.jbcs.minecraft.chisel.block;
 
+import info.jbcs.minecraft.chisel.Chisel;
 import info.jbcs.minecraft.chisel.client.GeneralChiselClient;
 import info.jbcs.minecraft.utilities.General;
 import net.minecraft.block.material.Material;
@@ -32,7 +33,7 @@ public class BlockHolystone extends BlockCarvable
     {
         super.registerBlockIcons(register);
 
-        iconStar = register.registerIcon("Chisel:holystone/particles/star");
+        iconStar = register.registerIcon(Chisel.MOD_ID + ":holystone/particles/star");
     }
 
 }

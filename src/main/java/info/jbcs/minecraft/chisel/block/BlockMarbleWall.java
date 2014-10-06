@@ -40,7 +40,7 @@ public class BlockMarbleWall extends BlockWall
     @Override
     public void registerBlockIcons(IIconRegister register)
     {
-        carverHelper.registerBlockIcons("Chisel", this, register);
+        carverHelper.registerBlockIcons(Chisel.MOD_NAME, this, register);
     }
 
     @Override

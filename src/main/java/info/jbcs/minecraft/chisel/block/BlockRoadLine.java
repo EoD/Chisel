@@ -73,9 +73,9 @@ public class BlockRoadLine extends Block
     @Override
     public void registerBlockIcons(IIconRegister reg)
     {
-        blockIcon = aloneIcon = reg.registerIcon("Chisel:line-marking/white-center");
-        halfLineIcon = reg.registerIcon("Chisel:line-marking/white-side");
-        fullLineIcon = reg.registerIcon("Chisel:line-marking/white-long");
+        blockIcon = aloneIcon = reg.registerIcon(Chisel.MOD_ID + ":line-marking/white-center");
+        halfLineIcon = reg.registerIcon(Chisel.MOD_ID + ":line-marking/white-side");
+        fullLineIcon = reg.registerIcon(Chisel.MOD_ID + ":line-marking/white-long");
     }
 
 }

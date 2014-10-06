@@ -1,5 +1,6 @@
 package info.jbcs.minecraft.chisel.client.gui;
 
+import info.jbcs.minecraft.chisel.Chisel;
 import info.jbcs.minecraft.chisel.inventory.ContainerChisel;
 import info.jbcs.minecraft.chisel.inventory.InventoryChiselSelection;
 import info.jbcs.minecraft.utilities.GeneralClient;
@@ -7,6 +8,7 @@ import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
+
 import org.lwjgl.opengl.GL11;
 
 public class GuiChisel extends GuiContainer
@@ -56,8 +58,8 @@ public class GuiChisel extends GuiContainer
         int j = height - ySize >> 1;
 
         String texture = isExtended() ?
-                "chisel:textures/chisel-gui-24.png" :
-                    "chisel:textures/chisel-gui.png";
+                Chisel.MOD_ID + ":textures/chisel-gui-24.png" :
+                Chisel.MOD_ID + ":textures/chisel-gui.png";
 
         GeneralClient.bind(texture);
         drawTexturedModalRect(i, j, 0, 0, xSize, ySize);

@@ -50,7 +50,7 @@ public class BlockMarbleStairs extends BlockStairs implements ICarvable
     public void registerBlockIcons(IIconRegister register)
     {
         if(blockMeta == 0)
-            carverHelper.registerBlockIcons("Chisel", this, register);
+            carverHelper.registerBlockIcons(Chisel.MOD_NAME, this, register);
     }
 
     @Override

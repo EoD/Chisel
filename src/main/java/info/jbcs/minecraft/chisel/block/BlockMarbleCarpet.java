@@ -48,7 +48,7 @@ public class BlockMarbleCarpet extends BlockCarpet implements ICarvable
     @Override
     public void registerBlockIcons(IIconRegister register)
     {
-        carverHelper.registerBlockIcons("Chisel", this, register);
+        carverHelper.registerBlockIcons(Chisel.MOD_NAME, this, register);
     }
 
     @Override
