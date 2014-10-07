@@ -40,6 +40,14 @@ public class Crafting
             GameRegistry.addRecipe(new ItemStack(ChiselBlocks.blockCarpetFloor, 3, meta), new Object[]{"XX", 'X', new ItemStack(ChiselBlocks.blockCarpet, 1, meta),});
         }
 
+        // Add block -> ingot recipes for all chisel variations
+        GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(Items.dye, 9, 4), "blockLapis"));
+        GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(Items.gold_ingot, 9), "blockGold"));
+        GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(Items.iron_ingot, 9), "blockIron"));
+        GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(Items.diamond, 9), "blockDiamond"));
+        GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(Items.emerald, 9), "blockEmerald"));
+        GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(Items.redstone, 9), "blockRedstone"));
+
         // The following recipe is due to bugs with Chisel 1.5.1 to 1.5.6a
         GameRegistry.addRecipe(new ItemStack(Blocks.sandstone, 1, 0), new Object[]{"X", 'X', new ItemStack(ChiselBlocks.blockSandstone, 1, 0),});
 
