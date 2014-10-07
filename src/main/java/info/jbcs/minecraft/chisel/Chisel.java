@@ -72,8 +72,14 @@ public class Chisel
     @EventHandler
     public void missingMapping(FMLMissingMappingsEvent event)
     {
-        for(MissingMapping m : event.get())
+        BlockNameConversion.init();
+
+        for(MissingMapping m : event.getAll())
         {
+            // as we catch ALL missing items, we only care about case-insensitive "chisel:"
+            if (!m.name.toLowerCase().startsWith(MOD_ID))
+                continue;
+
             // This bug was introduced along with Chisel 1.5.2, and was fixed in 1.5.3.
             // Ice Stairs were called null.0-7 instead of other names, and Marble/Limestone stairs did not exist.
             // This fixes the bug.
@@ -89,8 +95,7 @@ public class Chisel
             // Fix mapping of snakestoneSand, snakestoneStone, limestoneStairs, marbleStairs when loading an old (1.5.4) save
             else if(m.type == Type.BLOCK)
             {
-                Block block = null;
-                block = GameRegistry.findBlock(Chisel.MOD_ID, General.cleanTags(m.name));
+                final Block block = BlockNameConversion.findBlock(m.name);
 
                 if(block != null)
                 {
@@ -100,8 +105,7 @@ public class Chisel
                     FMLLog.getLogger().warn("Block " + m.name + " could not get remapped.");
             } else if(m.type == Type.ITEM)
             {
-                Item item = null;
-                item = GameRegistry.findItem(Chisel.MOD_ID, General.cleanTags(m.name));
+                final Item item = BlockNameConversion.findItem(m.name);
 
                 if(item != null)
                 {
