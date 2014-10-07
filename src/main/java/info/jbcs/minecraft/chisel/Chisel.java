@@ -90,13 +90,7 @@ public class Chisel
             else if(m.type == Type.BLOCK)
             {
                 Block block = null;
-
-                if(General.cleanTags(m.name).equals("sandSnakestone"))
-                    block = GameRegistry.findBlock(Chisel.MOD_ID, "tile.snakestoneSand");
-                else if(General.cleanTags(m.name).equals("snakestone"))
-                    block = GameRegistry.findBlock(Chisel.MOD_ID, "tile.snakestoneStone");
-                else
-                    block = GameRegistry.findBlock(Chisel.MOD_ID, General.cleanTags(m.name));
+                block = GameRegistry.findBlock(Chisel.MOD_ID, General.cleanTags(m.name));
 
                 if(block != null)
                 {
@@ -107,13 +101,7 @@ public class Chisel
             } else if(m.type == Type.ITEM)
             {
                 Item item = null;
-
-                if(General.cleanTags(m.name).equals("sandSnakestone"))
-                    item = GameRegistry.findItem(Chisel.MOD_ID, "tile.snakestoneSand");
-                else if(General.cleanTags(m.name).equals("snakestone"))
-                    item = GameRegistry.findItem(Chisel.MOD_ID, "tile.snakestoneStone");
-                else
-                    item = GameRegistry.findItem(Chisel.MOD_ID, General.cleanTags(m.name));
+                item = GameRegistry.findItem(Chisel.MOD_ID, General.cleanTags(m.name));
 
                 if(item != null)
                 {
@@ -151,7 +139,7 @@ public class Chisel
         {
             itemCloudInABottle = (ItemCloudInABottle) new ItemCloudInABottle().setTextureName("Chisel:cloudinabottle").setCreativeTab(CreativeTabs.tabTools);
             EntityRegistry.registerModEntity(EntityCloudInABottle.class, "CloudInABottle", 1, this, 40, 1, true);
-            GameRegistry.registerItem(itemCloudInABottle, "chisel.cloudinabottle");
+            GameRegistry.registerItem(itemCloudInABottle, "cloudinabottle");
         }
 
         if(Configurations.featureEnabled("ballOfMoss"))
