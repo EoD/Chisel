@@ -6,6 +6,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 import info.jbcs.minecraft.chisel.Chisel;
+import cpw.mods.fml.common.FMLLog;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -191,6 +192,17 @@ public class Carving
         return variation;
     }
 
+    public int getVariationCount(String groupname)
+    {
+    	CarvingGroup group = carvingGroupsByName.get(groupname);
+		if (group == null)
+		{
+			FMLLog.getLogger().error("CarvingGroup " + groupname + " does not exist.");
+			return 0;
+		}
+		int variationcount = group.variations.size();
+		return variationcount;
+    }
 
     public void registerOre(String name, String oreName)
     {
