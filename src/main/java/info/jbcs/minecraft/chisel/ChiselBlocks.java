@@ -99,7 +99,7 @@ public class ChiselBlocks
             blockMarble.carverHelper.addVariation(StatCollector.translateToLocal("chisel.tile.marble.14.desc"), 14, "marble/marble-fancy-bricks");
             blockMarble.carverHelper.addVariation(StatCollector.translateToLocal("chisel.tile.marble.15.desc"), 15, "marble/marble-blocks");
             blockMarble.carverHelper.register(blockMarble, "marble");
-            OreDictionary.registerOre("blockMarble", blockMarble);
+            OreDictionary.registerOre("blockMarble", new ItemStack(blockMarble, 1, OreDictionary.WILDCARD_VALUE) );
             Carving.chisel.registerOre("marble", "blockMarble");
 
             if(Chisel.multipartLoaded)
@@ -258,7 +258,7 @@ public class ChiselBlocks
             blockLimestone.carverHelper.addVariation(StatCollector.translateToLocal("chisel.tile.limestone.14.desc"), 14, "limestone/terrain-pistonback-lightmarker");
             blockLimestone.carverHelper.addVariation(StatCollector.translateToLocal("chisel.tile.limestone.15.desc"), 15, "limestone/terrain-pistonback-lightpanel");
             blockLimestone.carverHelper.register(blockLimestone, "limestone");
-            OreDictionary.registerOre("blockLimestone", blockLimestone);
+            OreDictionary.registerOre("blockLimestone", new ItemStack(blockLimestone, 1, OreDictionary.WILDCARD_VALUE));
             Carving.chisel.registerOre("limestone", "blockLimestone");
 
             blockLimestoneSlab = (BlockMarbleSlab) new BlockMarbleSlab(blockLimestone).setHardness(2.0F).setResistance(10F);
@@ -322,6 +322,7 @@ public class ChiselBlocks
             blockCobblestone.carverHelper.addVariation(StatCollector.translateToLocal("chisel.tile.cobblestone.13.desc"), 14, "cobblestone/terrain-pistonback-darkmarker");
             blockCobblestone.carverHelper.addVariation(StatCollector.translateToLocal("chisel.tile.cobblestone.14.desc"), 15, "cobblestone/terrain-pistonback-darkpanel");
             blockCobblestone.carverHelper.register(blockCobblestone, "cobblestone");
+            OreDictionary.registerOre("cobblestone", new ItemStack(blockCobblestone, 1, OreDictionary.WILDCARD_VALUE));
             Carving.chisel.registerOre("cobblestone", "blockCobble");
         }
 
@@ -345,6 +346,8 @@ public class ChiselBlocks
             blockGlass.carverHelper.addVariation(StatCollector.translateToLocal("chisel.tile.glass.14.desc"), 14, "glass/terrain-glass-thingrid");
             blockGlass.carverHelper.addVariation(StatCollector.translateToLocal("chisel.tile.glass.15.desc"), 15, "glass/a1-glasswindow-ironfencemodern");
             blockGlass.carverHelper.register(blockGlass, "glass");
+            OreDictionary.registerOre("blockGlassColorless", new ItemStack(blockGlass, 1, OreDictionary.WILDCARD_VALUE));
+            OreDictionary.registerOre("blockGlass", new ItemStack(blockGlass, 1, OreDictionary.WILDCARD_VALUE));
             Carving.chisel.registerOre("glass", "blockGlass");
         }
 
@@ -368,6 +371,7 @@ public class ChiselBlocks
             blockSandstone.carverHelper.addVariation(StatCollector.translateToLocal("chisel.tile.sandstone.14.desc"), 14, "sandstone/mosaic");
             blockSandstone.carverHelper.addVariation(StatCollector.translateToLocal("chisel.tile.sandstone.15.desc"), 15, "sandstone/horizontal-tiles");
             blockSandstone.carverHelper.register(blockSandstone, "sandstone");
+            OreDictionary.registerOre("sandstone", new ItemStack(blockSandstone, 1, OreDictionary.WILDCARD_VALUE));
             Carving.chisel.registerOre("sandstone", "blockSandstone");
 
             if(Configurations.featureEnabled("snakeSandstone"))
@@ -420,7 +424,7 @@ public class ChiselBlocks
             blockConcrete.carverHelper.addVariation(StatCollector.translateToLocal("chisel.tile.blockConcrete.10.desc"), 10, "concrete/asphalt");
             blockConcrete.carverHelper.register(blockConcrete, "concrete");
             blockConcrete.setHarvestLevel("pickaxe", 1);
-            OreDictionary.registerOre("blockConcrete", blockConcrete);
+            OreDictionary.registerOre("blockConcrete", new ItemStack(blockConcrete, 1, OreDictionary.WILDCARD_VALUE));
             Carving.chisel.registerOre("concrete", "blockConcrete");
         }
 
@@ -453,6 +457,7 @@ public class ChiselBlocks
             blockIron.carverHelper.addVariation(StatCollector.translateToLocal("chisel.tile.iron.15.desc"), 15, "iron/terrain-iron-simple");
             blockIron.carverHelper.register(blockIron, "iron");
             blockIron.setHarvestLevel("pickaxe", 1);
+            OreDictionary.registerOre("blockIron", new ItemStack(blockIron, 1, OreDictionary.WILDCARD_VALUE));
             Carving.chisel.registerOre("iron", "blockIron");
         }
 
@@ -476,6 +481,7 @@ public class ChiselBlocks
             blockGold.carverHelper.addVariation(StatCollector.translateToLocal("chisel.tile.gold.14.desc"), 14, "gold/terrain-gold-simple");
             blockGold.carverHelper.register(blockGold, "gold");
             blockGold.setHarvestLevel("pickaxe", 2);
+            OreDictionary.registerOre("blockGold", new ItemStack(blockGold, 1, OreDictionary.WILDCARD_VALUE));
             Carving.chisel.registerOre("gold", "blockGold");
         }
 
@@ -497,6 +503,7 @@ public class ChiselBlocks
             blockDiamond.carverHelper.addVariation(StatCollector.translateToLocal("chisel.tile.diamond.12.desc"), 12, "diamond/a1-blockdiamond-ornatelayer");
             blockDiamond.carverHelper.register(blockDiamond, "diamond");
             blockDiamond.setHarvestLevel("pickaxe", 2);
+            OreDictionary.registerOre("blockDiamond", new ItemStack(blockDiamond, 1, OreDictionary.WILDCARD_VALUE));
             Carving.chisel.registerOre("diamond", "blockDiamond");
         }
 
@@ -520,6 +527,7 @@ public class ChiselBlocks
             blockLightstone.carverHelper.addVariation(StatCollector.translateToLocal("chisel.tile.lightstone.14.desc"), 14, "lightstone/glowstone-bismuth");
             blockLightstone.carverHelper.addVariation(StatCollector.translateToLocal("chisel.tile.lightstone.15.desc"), 15, "lightstone/glowstone-bismuth-panel");
             blockLightstone.carverHelper.register(blockLightstone, "lightstone");
+            OreDictionary.registerOre("glowstone", new ItemStack(blockLightstone, 1, OreDictionary.WILDCARD_VALUE));
             Carving.chisel.registerOre("lightstone", "blockGlowstone");
         }
 
@@ -537,6 +545,7 @@ public class ChiselBlocks
             blockLapis.carverHelper.addVariation(StatCollector.translateToLocal("chisel.tile.lapis.8.desc"), 8, "lapis/a1-blocklapis-ornatelayer");
             blockLapis.carverHelper.register(blockLapis, "lapis");
             blockLapis.setHarvestLevel("pickaxe", 1);
+            OreDictionary.registerOre("blockLapis", new ItemStack(blockLapis, 1, OreDictionary.WILDCARD_VALUE));
             Carving.chisel.registerOre("lapis", "blockLapis");
         }
 
@@ -557,6 +566,7 @@ public class ChiselBlocks
             blockEmerald.carverHelper.addVariation(StatCollector.translateToLocal("chisel.tile.emerald.11.desc"), 11, "emerald/a1-blockquartz-ornate");
             blockEmerald.carverHelper.register(blockEmerald, "emerald");
             blockEmerald.setHarvestLevel("pickaxe", 2);
+            OreDictionary.registerOre("blockEmerald", new ItemStack(blockEmerald, 1, OreDictionary.WILDCARD_VALUE));
             Carving.chisel.registerOre("emerald", "blockEmerald");
         }
 
@@ -689,7 +699,7 @@ public class ChiselBlocks
             blockDirt.carverHelper.addVariation(StatCollector.translateToLocal("chisel.tile.blockDirt.12.desc"), 12, "dirt/vertical");
             blockDirt.carverHelper.register(blockDirt, "blockDirt");
             blockDirt.setHarvestLevel("shovel", 0);
-            OreDictionary.registerOre("blockDirt", blockDirt);
+            OreDictionary.registerOre("blockDirt", new ItemStack(blockDirt, 1, OreDictionary.WILDCARD_VALUE));
             Carving.chisel.registerOre("blockDirt", "blockDirt");
         }
 
@@ -713,6 +723,7 @@ public class ChiselBlocks
             blockIce.carverHelper.addVariation(StatCollector.translateToLocal("chisel.tile.ice.14.desc"), 14, "ice/bismuth");
             blockIce.carverHelper.addVariation(StatCollector.translateToLocal("chisel.tile.ice.15.desc"), 15, "ice/poison");
             blockIce.carverHelper.register(blockIce, "ice");
+            OreDictionary.registerOre("blockIce", new ItemStack(blockIce, 1, OreDictionary.WILDCARD_VALUE));
             Carving.chisel.registerOre("ice", "blockIce");
 
             if(Configurations.featureEnabled("icePillar"))
@@ -802,6 +813,7 @@ public class ChiselBlocks
                 blockPlanks[i].carverHelper.register(blockPlanks[i], "wood-" + n);
                 Carving.chisel.addVariation("wood-" + n, Blocks.planks, i, 0);
                 blockPlanks[i].setHarvestLevel("axe", 0);
+                OreDictionary.registerOre("plankWood", new ItemStack(blockPlanks[i], 1, OreDictionary.WILDCARD_VALUE));
 
                 Carving.chisel.setVariationSound("wood-" + n, Chisel.MOD_ID+":chisel.wood");
             }
@@ -871,6 +883,8 @@ public class ChiselBlocks
             blockPaneGlass.carverHelper.addVariation("Japanese glass pane", 14, "glasspane/japanese");
             blockPaneGlass.carverHelper.addVariation("Ornate japanese glass pane", 15, "glasspane/japanese2");
             blockPaneGlass.carverHelper.register(blockPaneGlass, "glassPane");
+            OreDictionary.registerOre("paneGlassColorless", new ItemStack(blockPaneGlass, 1, OreDictionary.WILDCARD_VALUE));
+            OreDictionary.registerOre("paneGlass", new ItemStack(blockPaneGlass, 1, OreDictionary.WILDCARD_VALUE));
         }
 
         if(Configurations.featureEnabled("redstoneBlock"))
@@ -893,6 +907,7 @@ public class ChiselBlocks
             blockRedstone.carverHelper.addVariation("Redstone skulls", 14, "redstone/a1-blockredstone-skullred");
             blockRedstone.carverHelper.addVariation("Redstone Zelda block", 15, "redstone/a1-blockredstone-redstonezelda");
             blockRedstone.carverHelper.register(blockRedstone, "blockRedstone");
+            OreDictionary.registerOre("blockRedstone", new ItemStack(blockRedstone, 1, OreDictionary.WILDCARD_VALUE));
             Carving.chisel.registerOre("blockRedstone", "blockRedstone");
         }
 
@@ -914,7 +929,7 @@ public class ChiselBlocks
             blockHolystone.carverHelper.addVariation("Smooth holystone plate", 12, "holystone/plate");
             blockHolystone.carverHelper.addVariation("Holystone plate", 13, "holystone/plate-rough");
             blockHolystone.carverHelper.register(blockHolystone, "blockHolystone");
-            OreDictionary.registerOre("blockHolystone", blockHolystone);
+            OreDictionary.registerOre("blockHolystone", new ItemStack(blockHolystone, 1, OreDictionary.WILDCARD_VALUE));
             Carving.chisel.registerOre("blockHolystone", "blockHolystone");
         }
 
@@ -929,7 +944,7 @@ public class ChiselBlocks
             blockLavastone.carverHelper.addVariation("Lava panel", 5, "fluidstone/panel");
             blockLavastone.carverHelper.addVariation("Ornate lava panel", 6, "fluidstone/panel-ornate");
             blockLavastone.carverHelper.register(blockLavastone, "blockLavastone");
-            OreDictionary.registerOre("blockLavastone", blockLavastone);
+            OreDictionary.registerOre("blockLavastone", new ItemStack(blockLavastone, 1, OreDictionary.WILDCARD_VALUE));
             Carving.chisel.registerOre("blockLavastone", "blockLavastone");
         }
 
@@ -944,7 +959,7 @@ public class ChiselBlocks
             blockWaterstone.carverHelper.addVariation(StatCollector.translateToLocal("chisel.tile.waterstone.5.desc"), 5, "fluidstone/panel");
             blockWaterstone.carverHelper.addVariation(StatCollector.translateToLocal("chisel.tile.waterstone.6.desc"), 6, "fluidstone/panel-ornate");
             blockWaterstone.carverHelper.register(blockWaterstone, "blockWaterstone");
-            OreDictionary.registerOre("blockWaterstone", blockWaterstone);
+            OreDictionary.registerOre("blockWaterstone", new ItemStack(blockWaterstone, 1, OreDictionary.WILDCARD_VALUE));
             Carving.chisel.registerOre("blockWaterstone", "blockWaterstone");
         }
 
@@ -969,7 +984,7 @@ public class ChiselBlocks
             blockFft.carverHelper.addVariation("Fantasy bricks in disarray", 14, "fft/bricks-chaotic");
             blockFft.carverHelper.addVariation("Weared fantasy bricks", 15, "fft/bricks-wear");
             blockFft.carverHelper.register(blockFft, "blockFft");
-            OreDictionary.registerOre("blockFft", blockFft);
+            OreDictionary.registerOre("blockFft", new ItemStack(blockFft, 1, OreDictionary.WILDCARD_VALUE));
             Carving.chisel.registerOre("blockFft", "blockFft");
         }
 
@@ -995,7 +1010,7 @@ public class ChiselBlocks
             blockCarpet.carverHelper.addVariation("Black carpet block", 15, "carpet/black");
             blockCarpet.carverHelper.forbidChiseling = true;
             blockCarpet.carverHelper.register(blockCarpet, "blockCarpet");
-            OreDictionary.registerOre("blockCarpet", blockCarpet);
+            OreDictionary.registerOre("blockCarpet", new ItemStack(blockCarpet, 1, OreDictionary.WILDCARD_VALUE));
             Carving.chisel.registerOre("blockCarpet", "blockCarpet");
         }
 
@@ -1070,7 +1085,7 @@ public class ChiselBlocks
             blockTyrian.carverHelper.addVariation("Black futuristic armor plating block with an opening", 14, "tyrian/opening");
             blockTyrian.carverHelper.addVariation("Futuristic armor plating with shining metal bits", 15, "tyrian/plate");
             blockTyrian.carverHelper.register(blockTyrian, "blockTyrian");
-            OreDictionary.registerOre("blockTyrian", blockTyrian);
+            OreDictionary.registerOre("blockTyrian", new ItemStack(blockTyrian, 1, OreDictionary.WILDCARD_VALUE));
             Carving.chisel.registerOre("blockTyrian", "blockTyrian");
         }
 
