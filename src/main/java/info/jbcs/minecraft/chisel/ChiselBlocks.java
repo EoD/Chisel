@@ -1165,7 +1165,7 @@ public class ChiselBlocks
         if(Configurations.featureEnabled("glassStained")) for(int i = 0; i < 16; i++)
         {
             String blockName = "chisel.stainedGlass" + sGNames[i].replaceAll(" ", "");
-            String oreName = "stainedGlass" + sGNames[i].replaceAll(" ", "");
+            final String oreName = "blockGlass" + sGNames[i].replaceAll(" ", "");
             String texName = "glassdyed/" + sGNames[i].toLowerCase().replaceAll(" ", "") + "-";
             int glassPrefix = (i & 3) << 2;
             int glassId = i >> 2;
@@ -1180,7 +1180,11 @@ public class ChiselBlocks
             blockStainedGlass[glassId].carverHelper.addVariation(sGNames[i] + " glass panel", glassPrefix + 1, texName + "panel");
             blockStainedGlass[glassId].carverHelper.addVariation(sGNames[i] + " fancy glass panel", glassPrefix + 2, texName + "panel-fancy");
             blockStainedGlass[glassId].carverHelper.addVariation(sGNames[i] + " borderless glass", glassPrefix + 3, texName + "transparent");
-            OreDictionary.registerOre(oreName, new ItemStack(Blocks.stained_glass, 1, i));
+            for (int j = 0; j < 4; j++)
+            {
+                OreDictionary.registerOre(oreName, new ItemStack(blockStainedGlass[glassId], 1, glassPrefix + j));
+                OreDictionary.registerOre("blockGlass", new ItemStack(blockStainedGlass[glassId], 1, glassPrefix + j));
+            }
             Carving.chisel.registerOre(blockName, oreName);
             for(CarvableVariation cv : blockStainedGlass[glassId].carverHelper.variations)
             {
@@ -1193,7 +1197,7 @@ public class ChiselBlocks
         if(Configurations.featureEnabled("glassStainedPane")) for(int i = 0; i < 16; i++)
         {
             String blockName = "chisel.stainedGlassPane" + sGNames[i].replaceAll(" ", "");
-            String oreName = "stainedGlassPane" + sGNames[i].replaceAll(" ", "");
+            final String oreName = "paneGlass" + sGNames[i].replaceAll(" ", "");
             String texName = "glasspanedyed/" + sGNames[i].toLowerCase().replaceAll(" ", "") + "-";
             Carving.chisel.addVariation(blockName, Blocks.stained_glass_pane, i, 0);
             int glassPrefix = (i & 1) << 3;
@@ -1210,7 +1214,12 @@ public class ChiselBlocks
             blockStainedGlassPane[glassId].carverHelper.addVariation(sGNames[i] + " borderless glass", glassPrefix + 3, texName + "transparent");
             blockStainedGlassPane[glassId].carverHelper.addVariation(sGNames[i] + " quadrant glass", glassPrefix + 4, texName + "quad");
             blockStainedGlassPane[glassId].carverHelper.addVariation(sGNames[i] + " fancy quadrant glass", glassPrefix + 5, texName + "quad-fancy");
-            OreDictionary.registerOre(oreName, new ItemStack(Blocks.stained_glass_pane, 1, i));
+            for (int j = 0; j < 6; j++)
+            {
+                OreDictionary.registerOre(oreName, new ItemStack(blockStainedGlassPane[glassId], 1, glassPrefix + j));
+                OreDictionary.registerOre("paneGlass", new ItemStack(blockStainedGlassPane[glassId], 1, glassPrefix + j));
+            }
+
             Carving.chisel.registerOre(blockName, oreName);
             for(CarvableVariation cv : blockStainedGlassPane[glassId].carverHelper.variations)
             {
