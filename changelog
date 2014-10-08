@@ -1,3 +1,11 @@
+1.5.8.5:
+- Fix ore dictionary entries of glass
+- Add all other chisel blocks to the ore dictionary
+- Add recipes to turn chisel blocks like redstone, diamond, iron, etc into ingots
+- Rewrite mod compatibility code. Supports the following mods now:
+  ProjectRed, Bluepower, UndergroundBiomes, Artifice, BiomesOPlenty,
+  Mariculture, Emashercore, Geologica
+
 1.5.8.4:
 - fix rendering crash with Lavastone/Fluidstone
 
