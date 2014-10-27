@@ -1,3 +1,9 @@
+1.5.8.6:
+- Change all item/block names to be consistent to vanilla naming scheme
+  This makes it also compatible with Pokefenn's Chisel 1.5.7+
+- Add savegame compatibility with AUTOMATIC_MAIDEN and Delta654 version of Chisel
+- Add support for connected textures with EnderIO facades (by CrazyPants)
+
 1.5.8.5:
 - Fix ore dictionary entries of glass
 - Add all other chisel blocks to the ore dictionary
