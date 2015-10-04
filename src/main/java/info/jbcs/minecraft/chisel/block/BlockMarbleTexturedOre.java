@@ -39,11 +39,11 @@ public class BlockMarbleTexturedOre extends BlockTexturedOre implements ICarvabl
     }
 
     @Override
-    public void registerBlockIcons(IIconRegister register)
+    public void registerIcons(IIconRegister register)
     {
-        super.registerBlockIcons(register);
+        super.registerIcons(register);
 
-        carverHelper.registerBlockIcons(Chisel.MOD_NAME, this, register);
+        carverHelper.registerIcons(Chisel.MOD_NAME, this, register);
     }
 
     @Override

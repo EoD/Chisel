@@ -19,7 +19,7 @@ public class Crafting
         Block concreteRecipeBlock = Block.getBlockFromName(Configurations.config.get("tweaks", "concrete recipe block", "gravel", "Unlocalized name of the block that, when burned, will produce concrete (examples: lightgem, stone)").getString());
         if(concreteRecipeBlock == null) concreteRecipeBlock = Blocks.gravel;
 
-        FurnaceRecipes.smelting().func_151393_a(concreteRecipeBlock, new ItemStack(ChiselBlocks.blockConcrete), 0.1F);
+        FurnaceRecipes.instance().addSmeltingRecipeForBlock(concreteRecipeBlock, new ItemStack(ChiselBlocks.blockConcrete), 0.1F);
 
         GameRegistry.addRecipe(new ItemStack(ChiselBlocks.blockSandstoneScribbles, 1), new Object[]{"X", 'X', new ItemStack(ChiselBlocks.blockSandstone, 1, 8),});
         for(int meta = 0; meta < 16; meta++)

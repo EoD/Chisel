@@ -65,9 +65,9 @@ public class BlockCarvable extends Block implements ICarvable
     }
 
     @Override
-    public void registerBlockIcons(IIconRegister register)
+    public void registerIcons(IIconRegister register)
     {
-        carverHelper.registerBlockIcons(Chisel.MOD_NAME, this, register);
+        carverHelper.registerIcons(Chisel.MOD_NAME, this, register);
     }
 
     @Override
@@ -161,7 +161,7 @@ public class BlockCarvable extends Block implements ICarvable
         }
 
         @Override
-        public String getBreakSound()
+        public String getDigResourcePath()
         {
             if(soundNameBreak == null)
                 return Chisel.MOD_ID + ":dig." + this.soundName;
@@ -170,7 +170,7 @@ public class BlockCarvable extends Block implements ICarvable
         }
 
         @Override
-        public String getStepResourcePath()
+        public String getStepSound()
         {
             if(soundNameStep == null)
                 return Chisel.MOD_ID + ":step." + this.soundName;
@@ -179,10 +179,10 @@ public class BlockCarvable extends Block implements ICarvable
         }
 
         @Override
-        public String func_150496_b()
+        public String getPlaceSound()
         {
             if(soundNamePlace == null)
-                return getBreakSound();
+                return getDigResourcePath();
             else
                 return this.soundNamePlace;
         }

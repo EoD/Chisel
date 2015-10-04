@@ -174,7 +174,7 @@ public class GeneralChiselClient
         }
 
         EntityDiggingFX res = new EntityDiggingFX(world, d0, d1, d2, 0.0D, 0.0D, 0.0D, block, world.getBlockMetadata(x, y, z), side);
-        //		res.func_70596_a(x, y, z);
+        //		res.applyColourMultiplier(x, y, z);
         res.motionX = d0 - (x + 0.5);
         res.motionY = d1 - (y + 0.5);
         res.motionZ = d2 - (z + 0.5);

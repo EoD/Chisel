@@ -288,7 +288,7 @@ public class CarvableHelper
 
     void registerBlock(Block block, String name, Class cl)
     {
-        block.setBlockName(name);
+        block.setUnlocalizedName(name);
         GameRegistry.registerBlock(block, cl, name);
         chiselBlocks.add(block);
     }
@@ -336,13 +336,13 @@ public class CarvableHelper
         }
     }
 
-    public void registerBlockIcons(String modName, Block block, IIconRegister register)
+    public void registerIcons(String modName, Block block, IIconRegister register)
     {
         for(CarvableVariation variation : variations)
         {
             if(variation.block != null)
             {
-                variation.block.registerBlockIcons(register);
+                variation.block.registerIcons(register);
 
                 if(variation.block instanceof BlockPane)
                 {

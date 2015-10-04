@@ -45,7 +45,7 @@ public class ItemMarbleSlab extends ItemCarvable
         Block targetBlock = world.getBlock(x, y, z);
         int meta = world.getBlockMetadata(x, y, z);
 
-        return (targetBlock.equals(block) || targetBlock.equals(block.top)) && meta == stack.getItemDamage() || world.canPlaceEntityOnSide(block, x, y, z, false, side, (Entity) null, stack);
+        return (targetBlock.equals(block) || targetBlock.equals(block.top)) && meta == stack.getMetadata() || world.canPlaceEntityOnSide(block, x, y, z, false, side, (Entity) null, stack);
 
     }
 
@@ -57,7 +57,7 @@ public class ItemMarbleSlab extends ItemCarvable
 
         Block targetBlock = world.getBlock(x, y, z);
         int meta = world.getBlockMetadata(x, y, z);
-        boolean metaMatches = meta == stack.getItemDamage();
+        boolean metaMatches = meta == stack.getMetadata();
 
         if(metaMatches && side == 0 && targetBlock.equals(block.top))
         {
@@ -99,7 +99,7 @@ public class ItemMarbleSlab extends ItemCarvable
         targetBlock = world.getBlock(x, y, z);
         meta = world.getBlockMetadata(x, y, z);
 
-        if(!result && (targetBlock.equals(block.top) || targetBlock.equals(block.bottom)) && meta == stack.getItemDamage())
+        if(!result && (targetBlock.equals(block.top) || targetBlock.equals(block.bottom)) && meta == stack.getMetadata())
         {
             world.setBlock(x, y, z, block.master, meta, 2);
             return true;

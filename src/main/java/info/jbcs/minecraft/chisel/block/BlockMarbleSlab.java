@@ -25,7 +25,7 @@ public class BlockMarbleSlab extends BlockCarvable
 
     public BlockMarbleSlab(BlockCarvable marble)
     {
-        opaque = true;
+        fullBlock = true;
 
         setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 0.5F, 1.0F);
 

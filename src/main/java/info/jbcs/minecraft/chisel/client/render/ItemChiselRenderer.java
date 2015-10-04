@@ -31,7 +31,7 @@ public class ItemChiselRenderer implements IItemRenderer
     {
         RenderHelper.enableGUIStandardItemLighting();
 
-        renderItem.renderItemIntoGUI(Minecraft.getMinecraft().fontRenderer, Minecraft.getMinecraft().renderEngine, stack, 0, 0);
+        renderItem.renderItemIntoGUI(Minecraft.getMinecraft().fontRendererObj, Minecraft.getMinecraft().renderEngine, stack, 0, 0);
 
         if(stack.stackTagCompound == null) return;
 
@@ -42,7 +42,7 @@ public class ItemChiselRenderer implements IItemRenderer
         GL11.glScalef(0.65f, 0.65f, 0.65f);
         GL11.glTranslatef(-8f, -8f, 0.0f);
 
-        renderItem.renderItemIntoGUI(Minecraft.getMinecraft().fontRenderer, Minecraft.getMinecraft().renderEngine, chiselTarget, 8, 8);
+        renderItem.renderItemIntoGUI(Minecraft.getMinecraft().fontRendererObj, Minecraft.getMinecraft().renderEngine, chiselTarget, 8, 8);
 
         GL11.glPopMatrix();
     }

@@ -543,7 +543,7 @@ public class BlockSnakestone extends Block
     }
 
     @Override
-    public void registerBlockIcons(IIconRegister register)
+    public void registerIcons(IIconRegister register)
     {
         iconFaceLeft = register.registerIcon(iconPrefix + "face-left");
         iconFaceRight = register.registerIcon(iconPrefix + "face-right");

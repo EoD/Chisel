@@ -32,7 +32,7 @@ public class ItemChisel extends ItemTool
         super(1, ToolMaterial.IRON, CarvableHelper.getChiselBlockSet());
 
         setMaxStackSize(1);
-        setMaxDamage(-1);
+        setMaxDurability(-1);
         efficiencyOnProperMaterial = 0.5f * super.efficiencyOnProperMaterial;
         setHarvestLevel(Chisel.toolclass, ToolMaterial.IRON.getHarvestLevel());
 
@@ -112,7 +112,7 @@ public class ItemChisel extends ItemTool
 
             final Item targetItem = chiselTarget.getItem();
             final Block targetBlock = Block.getBlockFromItem(targetItem);
-            final int targetMeta = chiselTarget.getItemDamage();
+            final int targetMeta = chiselTarget.getMetadata();
 
             boolean match = carving.isVariationOfSameClass(targetBlock, targetMeta, block, meta);
 
@@ -139,7 +139,7 @@ public class ItemChisel extends ItemTool
                         break;
 
                     case CLIENT:
-                        final String sound = carving.getVariationSound(targetItem, chiselTarget.getItemDamage());
+                        final String sound = carving.getVariationSound(targetItem, chiselTarget.getMetadata());
                         GeneralChiselClient.spawnChiselEffect(x, y, z, sound);
                         break;
 

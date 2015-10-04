@@ -44,26 +44,26 @@ public class SlotChiselSelection extends Slot
             selInventory.setInventorySlotContents(InventoryChiselSelection.normalSlots, crafted);
         } else
         {
-            putStack(new ItemStack(itemstack.getItem(), itemstack.stackSize, itemstack.getItemDamage()));
+            putStack(new ItemStack(itemstack.getItem(), itemstack.stackSize, itemstack.getMetadata()));
 
             player.inventory.setItemStack(null);
 
             if(selInventory.inventory[InventoryChiselSelection.normalSlots] == null) return;
 
-            player.inventory.setItemStack(new ItemStack(itemstack.getItem(), selInventory.inventory[InventoryChiselSelection.normalSlots].stackSize, itemstack.getItemDamage()));
+            player.inventory.setItemStack(new ItemStack(itemstack.getItem(), selInventory.inventory[InventoryChiselSelection.normalSlots].stackSize, itemstack.getMetadata()));
             selInventory.setInventorySlotContents(InventoryChiselSelection.normalSlots, null);
         }
 
 
         selInventory.updateItems();
 
-        String sound = container.carving.getVariationSound(itemstack.getItem(), itemstack.getItemDamage());
+        String sound = container.carving.getVariationSound(itemstack.getItem(), itemstack.getMetadata());
         player.worldObj.playSoundAtEntity(player, sound, 0.3f + 0.7f * General.rand.nextFloat(), 0.6f + 0.4f * General.rand.nextFloat());
 
 
         /*		ItemStack stack=player.inventory.getItemStack();
 
-		putStack(new ItemStack(itemstack.itemID, itemstack.stackSize, itemstack.getItemDamage()));
+		putStack(new ItemStack(itemstack.itemID, itemstack.stackSize, itemstack.getMetadata()));
 
 		super.onPickupFromSlot(player,itemstack);
 
@@ -71,12 +71,12 @@ public class SlotChiselSelection extends Slot
 
 		if(selInventory.items[InventoryChiselSelection.normalSlots]==null) return;
 
-		player.inventory.setItemStack(new ItemStack(itemstack.itemID, selInventory.items[InventoryChiselSelection.normalSlots].stackSize, itemstack.getItemDamage()));
+		player.inventory.setItemStack(new ItemStack(itemstack.itemID, selInventory.items[InventoryChiselSelection.normalSlots].stackSize, itemstack.getMetadata()));
 		selInventory.setInventorySlotContents(InventoryChiselSelection.normalSlots,null);
 
 		selInventory.updateItems();
 
-		String sound=Carving.chisel.getVariationSound(itemstack.itemID, itemstack.getItemDamage());
+		String sound=Carving.chisel.getVariationSound(itemstack.itemID, itemstack.getMetadata());
 		player.worldObj.playSoundAtEntity(player, sound, 0.3f + 0.7f * General.rand.nextFloat(), 0.6f + 0.4f * General.rand.nextFloat());
          */
     }

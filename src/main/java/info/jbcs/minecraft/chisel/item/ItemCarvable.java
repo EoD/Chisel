@@ -19,7 +19,7 @@ public class ItemCarvable extends ItemBlock
     public ItemCarvable(Block block)
     {
         super(block);
-        setMaxDamage(0);
+        setMaxDurability(0);
         setHasSubtypes(true);
     }
 
@@ -47,7 +47,7 @@ public class ItemCarvable extends ItemBlock
         if(!(block instanceof ICarvable)) return;
 
         ICarvable carvable = (ICarvable) block;
-        CarvableVariation var = carvable.getVariation(stack.getItemDamage());
+        CarvableVariation var = carvable.getVariation(stack.getMetadata());
         if(var == null)
             return;
 

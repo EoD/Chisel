@@ -9,7 +9,7 @@ public class ItemMetaBlock extends ItemBlock
     public ItemMetaBlock(Block b)
     {
         super(b);
-        setMaxDamage(0);
+        setMaxDurability(0);
         setHasSubtypes(true);
     }
 

@@ -69,7 +69,7 @@ public class BlockSpikes extends Block
     }
 
     @Override
-    public void registerBlockIcons(IIconRegister register)
+    public void registerIcons(IIconRegister register)
     {
         blockIcon = iconBase = register.registerIcon(General.getName(this) + "base");
         iconSpike = register.registerIcon(General.getName(this) + "spike");

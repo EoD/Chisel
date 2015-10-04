@@ -54,7 +54,7 @@ public class BlockTexturedOre extends Block
     }
 
     @Override
-    public void registerBlockIcons(IIconRegister register)
+    public void registerIcons(IIconRegister register)
     {
         if(iconFile != null)
             icon = register.registerIcon(iconFile);

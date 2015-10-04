@@ -376,7 +376,7 @@ public class ChiselBlocks
 
             if(Configurations.featureEnabled("snakeSandstone"))
             {
-                blockSandSnakestone = (BlockSnakestone) new BlockSnakestone("Chisel:snakestone/sandsnake/").setBlockName("snakestoneSand");
+                blockSandSnakestone = (BlockSnakestone) new BlockSnakestone("Chisel:snakestone/sandsnake/").setUnlocalizedName("snakestoneSand");
                 GameRegistry.registerBlock(blockSandSnakestone, ItemCarvable.class, "sand_snakestone");
                 //TODO- eat me!
                 //LanguageRegistry.addName(new ItemStack(blockSandSnakestone, 1, 1), "Sandstone snake block head");
@@ -430,7 +430,7 @@ public class ChiselBlocks
 
         if(Configurations.featureEnabled("roadLine"))
         {
-            blockRoadLine = (BlockRoadLine) new BlockRoadLine().setStepSound(Block.soundTypeStone).setHardness(0.01F).setBlockName("roadLine");
+            blockRoadLine = (BlockRoadLine) new BlockRoadLine().setStepSound(Block.soundTypeStone).setHardness(0.01F).setUnlocalizedName("roadLine");
             GameRegistry.registerBlock(blockRoadLine, ItemCarvable.class, "road_line");
             //TODO- flag
             //LanguageRegistry.addName(new ItemStack(blockRoadLine, 1, 0), "Road lines");
@@ -669,7 +669,7 @@ public class ChiselBlocks
 
         if(Configurations.featureEnabled("snakestone"))
         {
-            blockSnakestone = (BlockSnakestone) new BlockSnakestone("Chisel:snakestone/snake/").setBlockName("snakestoneStone");
+            blockSnakestone = (BlockSnakestone) new BlockSnakestone("Chisel:snakestone/snake/").setUnlocalizedName("snakestoneStone");
             blockSnakestone.setHarvestLevel("pickaxe", 0);
             GameRegistry.registerBlock(blockSnakestone, ItemCarvable.class, "stone_snakestone");
             //LanguageRegistry.addName(new ItemStack(blockSnakestone, 1, 1), "Stone snake block head");
@@ -680,7 +680,7 @@ public class ChiselBlocks
 
         if(Configurations.featureEnabled("dirt"))
         {
-            blockDirt = (BlockCarvable) new BlockCarvable(Material.ground).setHardness(0.5F).setStepSound(Block.soundTypeGravel).setBlockName("dirt.default");
+            blockDirt = (BlockCarvable) new BlockCarvable(Material.ground).setHardness(0.5F).setStepSound(Block.soundTypeGravel).setUnlocalizedName("dirt.default");
             Carving.chisel.addVariation("dirt", Blocks.dirt, 0, 0);
             blockDirt.carverHelper.setChiselBlockName("Dirt");
             //blockDirt.carverHelper.addVariation("Dirt", 0, Blocks.dirt);
@@ -846,7 +846,7 @@ public class ChiselBlocks
 
         if(Configurations.featureEnabled("snakestoneObsidian"))
         {
-            blockObsidianSnakestone = (BlockSnakestoneObsidian) new BlockSnakestoneObsidian("Chisel:snakestone/obsidian/").setBlockName("obsidianSnakestone").setHardness(50.0F).setResistance(2000.0F);
+            blockObsidianSnakestone = (BlockSnakestoneObsidian) new BlockSnakestoneObsidian("Chisel:snakestone/obsidian/").setUnlocalizedName("obsidianSnakestone").setHardness(50.0F).setResistance(2000.0F);
             blockObsidianSnakestone.setHarvestLevel("pickaxe", 3);
             GameRegistry.registerBlock(blockObsidianSnakestone, ItemCarvable.class, "obsidian_snakestone");
             //LanguageRegistry.addName(new ItemStack(blockObsidianSnakestone, 1, 1), "Obsidian snakestone head");
@@ -1188,7 +1188,7 @@ public class ChiselBlocks
             Carving.chisel.addVariation(blockName, Blocks.stained_glass, i, 0);
             if(glassPrefix == 0)
             {
-                blockStainedGlass[glassId] = (BlockCarvableGlass) new BlockCarvableGlass().setStained(true).setHardness(0.3F).setStepSound(Block.soundTypeGlass).setBlockName("Stained Glass");
+                blockStainedGlass[glassId] = (BlockCarvableGlass) new BlockCarvableGlass().setStained(true).setHardness(0.3F).setStepSound(Block.soundTypeGlass).setUnlocalizedName("Stained Glass");
                 blockStainedGlass[glassId].carverHelper.registerBlock(blockStainedGlass[glassId], blockName);
                 //blockStainedGlass[glassId].carverHelper.blockName = "Stained Glass";
             }
@@ -1220,7 +1220,7 @@ public class ChiselBlocks
             int glassId = i >> 1;
             if(glassPrefix == 0)
             {
-                blockStainedGlassPane[glassId] = (BlockCarvablePane) new BlockCarvablePane(Material.glass, false).setStained(true).setHardness(0.3F).setStepSound(Block.soundTypeGlass).setBlockName("Stained Glass Pane");
+                blockStainedGlassPane[glassId] = (BlockCarvablePane) new BlockCarvablePane(Material.glass, false).setStained(true).setHardness(0.3F).setStepSound(Block.soundTypeGlass).setUnlocalizedName("Stained Glass Pane");
                 blockStainedGlassPane[glassId].carverHelper.registerBlock(blockStainedGlassPane[glassId], blockName);
                 blockStainedGlassPane[glassId].carverHelper.blockName = "Stained Glass Pane";
             }

@@ -28,9 +28,9 @@ public class BlockSnakestoneObsidian extends BlockSnakestone
     }
 
     @Override
-    public void registerBlockIcons(IIconRegister register)
+    public void registerIcons(IIconRegister register)
     {
-        super.registerBlockIcons(register);
+        super.registerIcons(register);
 
         for(int i = 0; i < particles.length; i++)
         {

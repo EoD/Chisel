@@ -29,9 +29,9 @@ public class BlockHolystone extends BlockCarvable
     }
 
     @Override
-    public void registerBlockIcons(IIconRegister register)
+    public void registerIcons(IIconRegister register)
     {
-        super.registerBlockIcons(register);
+        super.registerIcons(register);
 
         iconStar = register.registerIcon(Chisel.MOD_ID + ":holystone/particles/star");
     }

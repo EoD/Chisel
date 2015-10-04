@@ -47,10 +47,10 @@ public class BlockMarbleStairs extends BlockStairs implements ICarvable
     }
 
     @Override
-    public void registerBlockIcons(IIconRegister register)
+    public void registerIcons(IIconRegister register)
     {
         if(blockMeta == 0)
-            carverHelper.registerBlockIcons(Chisel.MOD_NAME, this, register);
+            carverHelper.registerIcons(Chisel.MOD_NAME, this, register);
     }
 
     @Override
@@ -71,7 +71,7 @@ public class BlockMarbleStairs extends BlockStairs implements ICarvable
     {
         int l = MathHelper.floor_double((par5EntityLiving.rotationYaw * 4.0F / 360.0F) + 0.5D) & 3;
         int i1 = par1World.getBlockMetadata(par2, par3, par4) & 4;
-        int odd = par6ItemStack.getItemDamage();
+        int odd = par6ItemStack.getMetadata();
 
         if(l == 0)
         {

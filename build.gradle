@@ -22,6 +22,8 @@ version = "${mcVersion}-${modVersion}"
 group = "info.jbcs.minecraft.chisel" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "Chisel"
 
+idea { module { inheritOutputDirs = true } }
+
 minecraft {
     if (mcVersion == '1.7.2') {
       version = "1.7.2-10.12.2.1147"
@@ -32,6 +34,7 @@ minecraft {
     }
 
     runDir = "run"
+    mappings = "stable_12"
 
     replaceIn "Chisel.java"
     replace "@MOD_VERSION@", project.modVersion

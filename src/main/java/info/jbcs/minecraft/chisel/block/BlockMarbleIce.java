@@ -40,9 +40,9 @@ public class BlockMarbleIce extends BlockIce implements ICarvable
     }
 
     @Override
-    public void registerBlockIcons(IIconRegister register)
+    public void registerIcons(IIconRegister register)
     {
-        carverHelper.registerBlockIcons(Chisel.MOD_NAME, this, register);
+        carverHelper.registerIcons(Chisel.MOD_NAME, this, register);
     }
 
     @Override

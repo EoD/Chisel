@@ -105,7 +105,7 @@ public class Carving
     {
         ArrayList<ItemStack> items = new ArrayList<ItemStack>();
 
-        int damage = chiseledItem.getItemDamage();
+        int damage = chiseledItem.getMetadata();
 
         CarvingGroup group = getGroup(Block.getBlockFromItem(chiseledItem.getItem()), damage);
         if(group == null)
@@ -132,7 +132,7 @@ public class Carving
             for(ItemStack stack : ores)
             {
 
-                String key = Item.getIdFromItem(stack.getItem()) + "|" + stack.getItemDamage();
+                String key = Item.getIdFromItem(stack.getItem()) + "|" + stack.getMetadata();
                 if(mapping.containsKey(key)) continue;
                 mapping.put(key, 2);
 
